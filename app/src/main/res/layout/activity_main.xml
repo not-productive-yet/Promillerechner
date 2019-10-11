@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonGoToCalculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/buttonGoToDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Database Persons"
+        android:layout_below="@id/buttonGoToCalculator"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/buttonGoToInformations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informations"
+        android:layout_below="@id/buttonGoToDatabase"
+        android:layout_centerInParent="true"
+        />
+</RelativeLayout>
