@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.example.promillrechner_mobapp.R;
+import com.example.promillrechner_mobapp.RecyclerViewAdapterList;
 import com.example.promillrechner_mobapp.RecyclerViewAdapterListChoose;
 import com.example.promillrechner_mobapp.databaseService.Room;
 import com.example.promillrechner_mobapp.databaseService.Person;
@@ -19,7 +20,7 @@ public class PersonList extends AppCompatActivity {
 
     private PersonDao dao;
     private RecyclerView recyclerView;
-    private RecyclerViewAdapterListChoose adapter;
+    private RecyclerViewAdapterList adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class PersonList extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerviewPerson);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapterListChoose(this);
+        adapter = new RecyclerViewAdapterList(this);
         recyclerView.setAdapter(adapter);
 
         dao = Room.getDatabase(this).person_dao();

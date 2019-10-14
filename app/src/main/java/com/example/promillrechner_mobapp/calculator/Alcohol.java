@@ -26,11 +26,15 @@ public class Alcohol extends AppCompatActivity {
                 handlerGoToShowPromille();
             }
         });
+
+        //TODO: Alkohol mit % Werten hinterlegen und Input Menge vom User
     }
 
     private void handlerGoToShowPromille() {
         Intent intent = new Intent(this, Results.class);
         startActivity(intent);
+
+        //Fade right
         overridePendingTransition(R.xml.enter, R.xml.exit);
     }
 }

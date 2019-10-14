@@ -12,5 +12,8 @@ public class PersonEdit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_person_edit);
+
+        //TODO: Update Database
+
     }
 }

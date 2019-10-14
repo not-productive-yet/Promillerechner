@@ -24,10 +24,11 @@ public class Diagram extends AppCompatActivity {
                 handlerGoBackToMain();
             }
         });
+
+        //TODO: Diagram einfügen
     }
 
     private void handlerGoBackToMain() {
-        finish();
         //Intent intent = new Intent(this, MainActivity.class);
         //startActivity(intent);
     }

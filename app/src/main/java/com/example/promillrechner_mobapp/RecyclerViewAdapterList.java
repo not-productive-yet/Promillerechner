@@ -24,14 +24,14 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
 
     Context mContext;
     private PersonDao dao;
-    RecyclerViewAdapterList(Context context){
+    public RecyclerViewAdapterList(Context context){
         mContext =context;
     }
 
     @NonNull
     @Override
     public RecyclerViewAdapterList.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_simple, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_detail, parent, false);
         RecyclerView.ViewHolder holder = new RecyclerViewAdapterList.ViewHolder(view);
         return new RecyclerViewAdapterList.ViewHolder(view);
     }
@@ -40,7 +40,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
     public void onBindViewHolder(@NonNull RecyclerViewAdapterList.ViewHolder holder, final int position) {
         dao = Room.getDatabase(mContext).person_dao();
 
-        TextView textName = holder.itemView.findViewById(R.id.textName1);
+        TextView textName = holder.itemView.findViewById(R.id.textName);
         textName.setText(persons.get(position).getName());
 
         holder.parentLayout.setOnClickListener(this);

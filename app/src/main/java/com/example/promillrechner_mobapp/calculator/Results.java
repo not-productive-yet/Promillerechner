@@ -37,6 +37,8 @@ public class Results extends AppCompatActivity {
 
         intent = getIntent();
 
+        //TODO: Daten von Person setzen und Promillewert berechnen
+
         buttonGoToShowDiagram = findViewById(R.id.buttonGoToShowDiagram);
         textPromille = findViewById(R.id.textPromille);
         weight = intent.getDoubleExtra("Weight" , 0.0);

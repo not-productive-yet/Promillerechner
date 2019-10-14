@@ -19,11 +19,4 @@
         android:text="Create Person"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/recyclerviewChoosePerson"/>
-
-    <Button
-        android:id="@+id/buttonDummy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go To Choose Alcohol"
-        android:layout_below="@id/buttonGoToCreatePerson"/>
 </RelativeLayout>
