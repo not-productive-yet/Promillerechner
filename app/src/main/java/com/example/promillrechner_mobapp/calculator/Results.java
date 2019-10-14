@@ -1,4 +1,4 @@
-package com.example.promillrechner_mobapp;
+package com.example.promillrechner_mobapp.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,13 +8,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.promillrechner_mobapp.R;
+import com.example.promillrechner_mobapp.databaseService.Person;
+import com.example.promillrechner_mobapp.databaseService.PersonDao;
+
 import java.util.Collections;
 import java.util.List;
 
-public class Calc_show_promille extends AppCompatActivity {
+public class Results extends AppCompatActivity {
 
-    private data_person_dao dao;
-    private List<data_person> persons = Collections.EMPTY_LIST;
+    private PersonDao dao;
+    private List<Person> persons = Collections.EMPTY_LIST;
 
     Button buttonGoToShowDiagram = null;
     TextView textPromille = null;
@@ -29,7 +33,7 @@ public class Calc_show_promille extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calc_show_promille);
+        setContentView(R.layout.activity_calc_results);
 
         intent = getIntent();
 

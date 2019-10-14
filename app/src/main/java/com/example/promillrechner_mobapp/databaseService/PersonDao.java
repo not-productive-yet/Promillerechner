@@ -1,4 +1,4 @@
-package com.example.promillrechner_mobapp;
+package com.example.promillrechner_mobapp.databaseService;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -9,14 +9,14 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface data_person_dao {
+public interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insert(data_person name);
+    public void insert(Person name);
 
-    @Query("SELECT * from data_person")
-    public List<data_person> getAll();
+    @Query("SELECT * from Person")
+    public List<Person> getAll();
 
     @Delete
-    public void delete(data_person name);
+    public void delete(Person name);
 }

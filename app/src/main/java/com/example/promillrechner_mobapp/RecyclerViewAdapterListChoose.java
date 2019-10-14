@@ -13,18 +13,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.promillrechner_mobapp.calculator.Alcohol;
+import com.example.promillrechner_mobapp.databaseService.Person;
+import com.example.promillrechner_mobapp.databaseService.PersonDao;
+import com.example.promillrechner_mobapp.databaseService.Room;
+
 import java.util.Collections;
 import java.util.List;
 
 public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<RecyclerViewAdapterListChoose.ViewHolder> implements View.OnClickListener {
 
     //private static RecyclerViewClickListener itemListener;
-    private List<data_person> persons = Collections.emptyList();
+    private List<Person> persons = Collections.emptyList();
 
 
     Context mContext;
-    private data_person_dao dao;
-    RecyclerViewAdapterListChoose(Context context){
+    private PersonDao dao;
+    public RecyclerViewAdapterListChoose(Context context){
         mContext =context;
     }
 
@@ -32,14 +37,14 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_person_list_item_choose, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_detail, parent, false);
         RecyclerView.ViewHolder holder = new ViewHolder(view);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterListChoose.ViewHolder holder, final int position) {
-        dao = data_person_room_database.getDatabase(mContext).person_dao();
+        dao = Room.getDatabase(mContext).person_dao();
 
         TextView textName = holder.itemView.findViewById(R.id.textName);
         textName.setText(persons.get(position).getName());
@@ -58,7 +63,7 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(v.getContext(), Calc_choose_alcohol.class);
+        Intent intent = new Intent(v.getContext(), Alcohol.class);
         intent.putExtra("Weight",persons.get(0).getWeight());
         v.getContext().startActivity(intent);
     }
@@ -80,22 +85,22 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
             parentLayout = itemView.findViewById(R.id.parentLayoutListChoose);
         }
     }
-    public void setPersons(List<data_person> persons){
+    public void setPersons(List<Person> persons){
         this.persons = persons;
         notifyDataSetChanged();
     }
 
-    class DeleteAlcoholTask extends AsyncTask<data_person, Void, List<data_person>> {
+    class DeleteAlcoholTask extends AsyncTask<Person, Void, List<Person>> {
 
         @Override
-        protected List<data_person> doInBackground(data_person... data_persons) {
-                dao.delete(data_persons[0]);
+        protected List<Person> doInBackground(Person... People) {
+                dao.delete(People[0]);
                 return dao.getAll();
             }
         @Override
-        protected void onPostExecute(List<data_person> data_persons){
-            super.onPostExecute(data_persons);
-            setPersons(data_persons);
+        protected void onPostExecute(List<Person> People){
+            super.onPostExecute(People);
+            setPersons(People);
         }
         }
 

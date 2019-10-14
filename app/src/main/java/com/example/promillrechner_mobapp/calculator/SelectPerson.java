@@ -1,4 +1,4 @@
-package com.example.promillrechner_mobapp;
+package com.example.promillrechner_mobapp.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,19 +10,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.promillrechner_mobapp.database.PersonCreate;
+import com.example.promillrechner_mobapp.R;
+import com.example.promillrechner_mobapp.RecyclerViewAdapterListChoose;
+import com.example.promillrechner_mobapp.databaseService.Person;
+import com.example.promillrechner_mobapp.databaseService.PersonDao;
+import com.example.promillrechner_mobapp.databaseService.Room;
+
 import java.util.List;
 
-public class Calc_choose_person extends AppCompatActivity {
+public class SelectPerson extends AppCompatActivity {
 
     Button buttonGoToCreatePerson = null;
-    private data_person_dao dao;
+    private PersonDao dao;
     private RecyclerView recyclerView;
     private RecyclerViewAdapterListChoose adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calc_choose_person);
+        setContentView(R.layout.activity_calc_person);
 
         buttonGoToCreatePerson = findViewById(R.id.buttonGoToCreatePerson);
 
@@ -32,7 +39,7 @@ public class Calc_choose_person extends AppCompatActivity {
         adapter = new RecyclerViewAdapterListChoose(this);
         recyclerView.setAdapter(adapter);
 
-        dao = data_person_room_database.getDatabase(this).person_dao();
+        dao = Room.getDatabase(this).person_dao();
 
 
         buttonGoToCreatePerson.setOnClickListener(new View.OnClickListener() {
@@ -50,22 +57,22 @@ public class Calc_choose_person extends AppCompatActivity {
         new LadePersonTask().execute();
     }
 
-    class LadePersonTask extends AsyncTask<Void, Void, List<data_person>> {
+    class LadePersonTask extends AsyncTask<Void, Void, List<Person>> {
 
         @Override
-        protected List<data_person> doInBackground(Void... voids) {
+        protected List<Person> doInBackground(Void... voids) {
             return dao.getAll();
         }
 
         @Override
-        protected void onPostExecute(List<data_person> persons){
+        protected void onPostExecute(List<Person> persons){
             super.onPostExecute(persons);
             adapter.setPersons(persons);
         }
     }
 
     private void handlerGoToCreatePerson() {
-        Intent intent = new Intent(this, Database_person_create.class);
+        Intent intent = new Intent(this, PersonCreate.class);
         startActivity(intent);
     }
 }

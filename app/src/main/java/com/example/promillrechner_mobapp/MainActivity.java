@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.promillrechner_mobapp.calculator.SelectPerson;
+import com.example.promillrechner_mobapp.database.PersonList;
+
 public class MainActivity extends AppCompatActivity {
 
     Button buttonGoToCalculator = null;
@@ -45,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handlerGoToCalculator(){
-        Intent intent = new Intent(this, Calc_choose_person.class);
+        Intent intent = new Intent(this, SelectPerson.class);
         startActivity(intent);
     }
 
     private void handlerGoToDatabase(){
-        Intent intent = new Intent(this, Database_persons.class);
+        Intent intent = new Intent(this, PersonList.class);
         startActivity(intent);
     }
 

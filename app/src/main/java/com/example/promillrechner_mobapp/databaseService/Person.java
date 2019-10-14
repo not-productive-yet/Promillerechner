@@ -1,10 +1,10 @@
-package com.example.promillrechner_mobapp;
+package com.example.promillrechner_mobapp.databaseService;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class data_person {
+public class Person {
 
     @PrimaryKey(autoGenerate = true)
 
@@ -14,7 +14,7 @@ public class data_person {
     private int size;
     private boolean male;
 
-    public data_person(String name, Double weight, int size, boolean male){
+    public Person(String name, Double weight, int size, boolean male){
         this.name=name;
         this.weight=weight;
         this.size=size;

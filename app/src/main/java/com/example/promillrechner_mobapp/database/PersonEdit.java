@@ -1,10 +1,12 @@
-package com.example.promillrechner_mobapp;
+package com.example.promillrechner_mobapp.database;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Database_person_edit extends AppCompatActivity {
+import com.example.promillrechner_mobapp.R;
+
+public class PersonEdit extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

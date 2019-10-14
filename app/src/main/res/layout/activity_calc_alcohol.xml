@@ -4,20 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Calc_show_promille">
+    tools:context=".calculator.Alcohol">
 
     <Button
-        android:id="@+id/buttonGoToShowDiagram"
+        android:id="@+id/buttonGoToShowPromille"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show diagram"
-        android:layout_below="@id/textPromille"/>
-
-    <TextView
-        android:id="@+id/textPromille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Calculate!"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>
