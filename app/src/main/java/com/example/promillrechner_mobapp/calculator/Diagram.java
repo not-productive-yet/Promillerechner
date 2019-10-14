@@ -26,6 +26,7 @@ public class Diagram extends AppCompatActivity {
         });
 
         //TODO: Diagram einfügen
+        //TODO: Weiterleitung geht noch nicht
     }
 
     private void handlerGoBackToMain() {
