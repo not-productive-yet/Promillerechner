@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.promillrechner_mobapp.R;
 import com.example.promillrechner_mobapp.RecyclerViewAdapterList;
@@ -21,6 +23,7 @@ public class PersonList extends AppCompatActivity {
     private PersonDao dao;
     private RecyclerView recyclerView;
     private RecyclerViewAdapterList adapter;
+    Button buttonClear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

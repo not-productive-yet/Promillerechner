@@ -3,8 +3,10 @@ package com.example.promillrechner_mobapp.databaseService;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Person {
+public class Person implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
 

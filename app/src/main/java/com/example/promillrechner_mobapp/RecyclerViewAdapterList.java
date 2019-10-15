@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,10 +18,11 @@ import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 import com.example.promillrechner_mobapp.databaseService.Room;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAdapterList.ViewHolder> implements View.OnClickListener {
+public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAdapterList.ViewHolder> {
     private List<Person> persons = Collections.emptyList();
 
     Context mContext;
@@ -42,8 +45,24 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
 
         TextView textName = holder.itemView.findViewById(R.id.textName);
         textName.setText(persons.get(position).getName());
+        Button buttonClear = holder.itemView.findViewById(R.id.buttonClear);
 
-        holder.parentLayout.setOnClickListener(this);
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), PersonEdit.class);
+                intent.putExtra("person", persons.get(position));
+                v.getContext().startActivity(intent);
+            }
+        });
+
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // dao.delete(persons.get(position));
+            }
+        });
     }
 
     @Override
@@ -51,23 +70,16 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         return persons.size();
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(v.getContext(), PersonEdit.class);
-        v.getContext().startActivity(intent);
-    }
-
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textName;
-        LinearLayout parentLayout;
+        RelativeLayout parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textName = itemView.findViewById(R.id.textName1);
-            parentLayout = itemView.findViewById(R.id.parentLayoutList);
+            parentLayout = itemView.findViewById(R.id.parentLayoutListChoose);
         }
     }
     public void setPersons(List<Person> persons){

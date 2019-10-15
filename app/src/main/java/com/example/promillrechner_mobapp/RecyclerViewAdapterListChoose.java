@@ -37,7 +37,7 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_detail, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_simple, parent, false);
         RecyclerView.ViewHolder holder = new ViewHolder(view);
         return new ViewHolder(view);
     }
@@ -46,12 +46,8 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     public void onBindViewHolder(@NonNull RecyclerViewAdapterListChoose.ViewHolder holder, final int position) {
         dao = Room.getDatabase(mContext).person_dao();
 
-        TextView textName = holder.itemView.findViewById(R.id.textName);
+        TextView textName = holder.itemView.findViewById(R.id.textName1);
         textName.setText(persons.get(position).getName());
-        TextView textWeight = holder.itemView.findViewById(R.id.textWeight);
-        textWeight.setText(Double.toString(persons.get(position).getWeight()));
-        TextView textSize = holder.itemView.findViewById(R.id.textSize);
-        textSize.setText(Integer.toString(persons.get(position).getSize()));
 
         holder.parentLayout.setOnClickListener(this);
     }
@@ -64,25 +60,20 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(v.getContext(), Alcohol.class);
-        intent.putExtra("Weight",persons.get(0).getWeight());
         v.getContext().startActivity(intent);
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textName;
-        TextView textWeight;
-        TextView textSize;
+        TextView textName1;
         LinearLayout parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textName = itemView.findViewById(R.id.textName);
-            textWeight = itemView.findViewById(R.id.textWeight);
-            textSize = itemView.findViewById(R.id.textSize);
-            parentLayout = itemView.findViewById(R.id.parentLayoutListChoose);
+            textName1 = itemView.findViewById(R.id.textName1);
+            parentLayout = itemView.findViewById(R.id.parentLayoutList);
         }
     }
     public void setPersons(List<Person> persons){
