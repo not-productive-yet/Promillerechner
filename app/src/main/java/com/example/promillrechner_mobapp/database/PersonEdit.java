@@ -56,8 +56,8 @@ public class PersonEdit extends AppCompatActivity {
         person = (Person) i.getSerializableExtra("person");
 
         textName.setText(person.getName());
-        textSize.setText(Integer.toString(person.getSize()));
-        textWeight.setText(Double.toString(person.getWeight()));
+        textSize.setText(Integer.toString(person.getSize()) + " kg");
+        textWeight.setText(Double.toString(person.getWeight()) + " cm");
 
         if (person.isMale())
             male.setChecked(true);

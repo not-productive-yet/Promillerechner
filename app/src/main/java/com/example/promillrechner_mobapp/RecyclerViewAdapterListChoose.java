@@ -66,13 +66,13 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textName1;
+        TextView textName;
         LinearLayout parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textName1 = itemView.findViewById(R.id.textName1);
+            textName = itemView.findViewById(R.id.textName1);
             parentLayout = itemView.findViewById(R.id.parentLayoutList);
         }
     }

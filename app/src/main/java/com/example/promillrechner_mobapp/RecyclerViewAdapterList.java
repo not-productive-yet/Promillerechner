@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,7 +28,18 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
     private List<Person> persons = Collections.emptyList();
 
     Context mContext;
+    OnItemClickListener mListener;
+    public ImageView delete;
     private PersonDao dao;
+
+    public interface OnItemClickListener {
+        void onItemClick(Person position);
+        void onDeleteClick(Person position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {mListener = listener;}
+
+
     public RecyclerViewAdapterList(Context context){
         mContext =context;
     }
@@ -35,8 +48,8 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
     @Override
     public RecyclerViewAdapterList.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_detail, parent, false);
-        RecyclerView.ViewHolder holder = new RecyclerViewAdapterList.ViewHolder(view);
-        return new RecyclerViewAdapterList.ViewHolder(view);
+        RecyclerView.ViewHolder holder = new RecyclerViewAdapterList.ViewHolder(view, mListener);
+        return new RecyclerViewAdapterList.ViewHolder(view, mListener);
     }
 
     @Override
@@ -45,24 +58,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
 
         TextView textName = holder.itemView.findViewById(R.id.textName);
         textName.setText(persons.get(position).getName());
-        Button buttonClear = holder.itemView.findViewById(R.id.buttonClear);
 
-        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), PersonEdit.class);
-                intent.putExtra("person", persons.get(position));
-                v.getContext().startActivity(intent);
-            }
-        });
-
-
-        buttonClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // dao.delete(persons.get(position));
-            }
-        });
     }
 
     @Override
@@ -75,11 +71,26 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         TextView textName;
         RelativeLayout parentLayout;
 
-        public ViewHolder(@NonNull View itemView) {
+
+        public ViewHolder(@NonNull final View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             textName = itemView.findViewById(R.id.textName1);
-            parentLayout = itemView.findViewById(R.id.parentLayoutListChoose);
+            parentLayout = itemView.findViewById(R.id.parentLayoutListDatabase);
+            delete = itemView.findViewById(R.id.item_delete);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(persons.get(getAdapterPosition()));
+                }
+            });
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onDeleteClick(persons.get(getAdapterPosition()));
+                }
+            });
         }
     }
     public void setPersons(List<Person> persons){

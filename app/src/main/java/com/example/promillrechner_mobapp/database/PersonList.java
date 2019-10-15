@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +25,6 @@ public class PersonList extends AppCompatActivity {
     private PersonDao dao;
     private RecyclerView recyclerView;
     private RecyclerViewAdapterList adapter;
-    Button buttonClear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,20 @@ public class PersonList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerViewAdapterList(this);
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new RecyclerViewAdapterList.OnItemClickListener() {
+            @Override
+            public void onItemClick(Person position) {
+                Intent intent = new Intent(PersonList.this, PersonEdit.class);
+                intent.putExtra("person", position);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDeleteClick(Person position) {
+                new DeletePersonTask().execute(position);
+            }
+        });
 
         dao = Room.getDatabase(this).person_dao();
     }
@@ -48,6 +63,21 @@ public class PersonList extends AppCompatActivity {
 
         @Override
         protected List<Person> doInBackground(Void... voids) {
+            return dao.getAll();
+        }
+
+        @Override
+        protected void onPostExecute(List<Person> persons){
+            super.onPostExecute(persons);
+            adapter.setPersons(persons);
+        }
+    }
+
+    public class DeletePersonTask extends AsyncTask<Person, Void, List<Person>> {
+
+        @Override
+        protected List<Person> doInBackground(Person... people) {
+            dao.delete(people[0]);
             return dao.getAll();
         }
 
