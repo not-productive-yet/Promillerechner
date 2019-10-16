@@ -4,23 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".database.PersonCreate">
-
-    <Button
-        android:id="@+id/buttonCancelPerson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:text="Cancel" />
-
-    <Button
-        android:id="@+id/buttonSavePerson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Person"
-        android:layout_toRightOf="@id/buttonCancelPerson"
-        android:layout_marginTop="500dp"
-        />
+    tools:context=".database.PersonCreate"
+    android:background="@color/colorWhite">
 
     <EditText
         android:id="@+id/editName"
@@ -28,15 +13,29 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorBlack" />
 
+    <!--
     <EditText
         android:id="@+id/editWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:layout_below="@id/editName"/>
+        android:layout_below="@id/editName"
+        android:hint="Gewicht"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        />
 
     <EditText
         android:id="@+id/editSize"
@@ -44,13 +43,72 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:layout_below="@id/editWeight"/>
+        android:layout_below="@id/editWeight"
+        android:hint="Größe"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        />
+    -->
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/editName"
+    android:orientation="vertical"
+    android:layout_toRightOf="@+id/Size"
+    android:layout_marginLeft="100dp">
 
-    <RadioGroup
-        android:id="@+id/radioGroupGender"
+    <TextView
+        android:id="@+id/textNumberPickerGewicht"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gewicht \nin kg"
+        android:layout_below="@id/editName"
+        android:textAlignment="center"
+        />
+
+    <NumberPicker
+        android:id="@+id/numberPickerGewicht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editSize">
+        android:layout_below="@id/textNumberPickerGewicht"
+        />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/editName"
+    android:orientation="vertical"
+    android:id="@+id/Size"
+    android:layout_marginLeft="80dp">
+
+    <TextView
+        android:id="@+id/textNumberPickerSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Größe \nin cm"
+        android:layout_below="@id/editName"
+        android:textAlignment="center"
+        />
+
+    <NumberPicker
+        android:id="@+id/numberPickerSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        />
+
+</LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroupEditGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Size"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
 
         <RadioButton
             android:id="@+id/radioButtonMale"
@@ -64,6 +122,33 @@
             android:text="Female"/>
 
     </RadioGroup>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/buttonCancelPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"/>
+
+        <Button
+            android:id="@+id/buttonSavePerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_toRightOf="@id/buttonEditCancelPerson"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            />
+    </LinearLayout>
+
 
 
 </RelativeLayout>

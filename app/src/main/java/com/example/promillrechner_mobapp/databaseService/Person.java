@@ -12,11 +12,11 @@ public class Person implements Serializable {
 
     private int id;
     private String name;
-    private Double weight;
+    private int weight;
     private int size;
     private boolean male;
 
-    public Person(String name, Double weight, int size, boolean male){
+    public Person(String name, int weight, int size, boolean male){
         this.name=name;
         this.weight=weight;
         this.size=size;
@@ -31,7 +31,7 @@ public class Person implements Serializable {
     public String getName() {
         return name;
     }
-    public Double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

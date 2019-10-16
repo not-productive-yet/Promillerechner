@@ -3,12 +3,18 @@ package com.example.promillrechner_mobapp.database;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.example.promillrechner_mobapp.R;
 import com.example.promillrechner_mobapp.calculator.Alcohol;
@@ -20,6 +26,8 @@ public class PersonCreate extends AppCompatActivity {
 
     Button buttonSavePerson = null;
     Button buttonCancelPerson = null;
+    NumberPicker npSize = null;
+    NumberPicker npWeight = null;
     private PersonDao dao = null;
 
     @Override
@@ -31,6 +39,16 @@ public class PersonCreate extends AppCompatActivity {
 
         buttonSavePerson = findViewById(R.id.buttonSavePerson);
         buttonCancelPerson = findViewById(R.id.buttonCancelPerson);
+        npSize = findViewById(R.id.numberPickerSize);
+        npWeight = findViewById(R.id.numberPickerGewicht);
+
+        npSize.setMinValue(150);
+        npSize.setMaxValue(210);
+        npSize.setValue(180);
+
+        npWeight.setMinValue(45);
+        npWeight.setMaxValue(120);
+        npWeight.setValue(80);
 
         buttonSavePerson.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,9 +88,8 @@ public class PersonCreate extends AppCompatActivity {
 
     private void saveWordOnClick(){
         EditText name = findViewById(R.id.editName);
-        EditText weight = findViewById(R.id.editWeight);
-        EditText size = findViewById(R.id.editSize);
         RadioButton gender = findViewById(R.id.radioButtonMale);
-        new SpeichernTask().execute(new Person(name.getText().toString(), Double.parseDouble(weight.getText().toString()), Integer.parseInt(size.getText().toString()), false));
+        new SpeichernTask().execute(new Person(name.getText().toString(), npWeight.getValue(), npSize.getValue(), false));
     }
+
 }
