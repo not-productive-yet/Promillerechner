@@ -11,25 +11,42 @@
         android:id="@+id/buttonGoToCalculator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:background="@drawable/button_main"
         android:text="Calculator"
-        android:layout_centerInParent="true"
-        />
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/buttonGoToDatabase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:background="@drawable/button_main"
         android:text="Database Persons"
-        android:layout_below="@id/buttonGoToCalculator"
-        android:layout_centerInParent="true"
-        />
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/buttonGoToInformations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Informations"
-        android:layout_below="@id/buttonGoToDatabase"
-        android:layout_centerInParent="true"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:background="@drawable/button_main"
+        android:text="Information"
+        android:textColor="@color/colorWhite" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
+        android:layout_marginTop="500dp"
+        android:paddingBottom="0dp"
+        android:src="@drawable/bottle1" />
 </RelativeLayout>
