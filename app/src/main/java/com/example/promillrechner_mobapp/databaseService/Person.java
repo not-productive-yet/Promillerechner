@@ -3,18 +3,20 @@ package com.example.promillrechner_mobapp.databaseService;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Person {
+public class Person implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
 
     private int id;
     private String name;
-    private Double weight;
+    private int weight;
     private int size;
     private boolean male;
 
-    public Person(String name, Double weight, int size, boolean male){
+    public Person(String name, int weight, int size, boolean male){
         this.name=name;
         this.weight=weight;
         this.size=size;
@@ -29,7 +31,7 @@ public class Person {
     public String getName() {
         return name;
     }
-    public Double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

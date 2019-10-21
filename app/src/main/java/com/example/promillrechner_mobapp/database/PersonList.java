@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.promillrechner_mobapp.R;
 import com.example.promillrechner_mobapp.RecyclerViewAdapterList;
@@ -32,6 +36,20 @@ public class PersonList extends AppCompatActivity {
         adapter = new RecyclerViewAdapterList(this);
         recyclerView.setAdapter(adapter);
 
+        adapter.setOnItemClickListener(new RecyclerViewAdapterList.OnItemClickListener() {
+            @Override
+            public void onItemClick(Person position) {
+                Intent intent = new Intent(PersonList.this, PersonEdit.class);
+                intent.putExtra("person", position);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onDeleteClick(Person position) {
+                new DeletePersonTask().execute(position);
+            }
+        });
+
         dao = Room.getDatabase(this).person_dao();
     }
 
@@ -45,6 +63,21 @@ public class PersonList extends AppCompatActivity {
 
         @Override
         protected List<Person> doInBackground(Void... voids) {
+            return dao.getAll();
+        }
+
+        @Override
+        protected void onPostExecute(List<Person> persons){
+            super.onPostExecute(persons);
+            adapter.setPersons(persons);
+        }
+    }
+
+    public class DeletePersonTask extends AsyncTask<Person, Void, List<Person>> {
+
+        @Override
+        protected List<Person> doInBackground(Person... people) {
+            dao.delete(people[0]);
             return dao.getAll();
         }
 

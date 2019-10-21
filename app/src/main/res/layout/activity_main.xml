@@ -4,31 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_stars"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buttonGoToCalculator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:background="@drawable/button_main"
         android:text="Calculator"
-        android:layout_centerInParent="true"
-        />
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/buttonGoToDatabase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Database Persons"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/buttonGoToCalculator"
-        android:layout_centerInParent="true"
-        />
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:background="@drawable/button_main"
+        android:text="Database Persons"
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/buttonGoToInformations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Informations"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/buttonGoToDatabase"
-        android:layout_centerInParent="true"
-        />
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:background="@drawable/button_main"
+        android:text="Information"
+        android:textColor="@color/colorWhite" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:src="@drawable/skyline" />
 </RelativeLayout>

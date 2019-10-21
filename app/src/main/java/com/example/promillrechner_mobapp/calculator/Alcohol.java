@@ -18,7 +18,7 @@ public class Alcohol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc_alcohol);
 
-        buttonGoToShowPromille = findViewById(R.id.buttonGoToShowPromille);
+        buttonGoToShowPromille = findViewById(R.id.buttonShowResults);
 
         buttonGoToShowPromille.setOnClickListener(new View.OnClickListener() {
             @Override
