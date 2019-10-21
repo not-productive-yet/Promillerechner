@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/parentLayoutListDatabase"
-    android:background="@drawable/gradient_3"
-    android:layout_margin="10dp">
+    >
 
 
     <TextView
@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:textSize="30sp"
+        android:textColor="@color/colorLightBlue"
+        android:textStyle="bold"
         android:layout_marginLeft="50dp"/>
 
    <ImageView
@@ -20,7 +22,8 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:src="@drawable/ic_delete_forever_black_24dp"
-       android:layout_alignParentEnd="true"
-       android:layout_centerVertical="true"/>
+       android:layout_alignParentRight="true"
+       android:layout_centerVertical="true"
+       />
 
 </RelativeLayout>

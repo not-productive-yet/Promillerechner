@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".database.PersonEdit">
+    tools:context=".database.PersonEdit"
+    android:background="@color/colorBlack">
 
 
     <EditText
@@ -16,7 +17,8 @@
         android:hint="Name"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="150dp"
+        android:textColor="@color/colorWhite"/>
 
     <EditText
         android:id="@+id/editEditWeight"
@@ -28,7 +30,8 @@
         android:hint="Gewicht"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"/>
 
     <EditText
         android:id="@+id/editEditSize"
@@ -40,7 +43,8 @@
         android:hint="Größe"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"/>
 
     <RadioGroup
         android:id="@+id/radioGroupEditGender"

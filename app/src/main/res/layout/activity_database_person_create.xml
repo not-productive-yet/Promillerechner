@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".database.PersonCreate"
-    android:background="@color/colorWhite">
+    android:background="@drawable/gradient_3">>
 
     <EditText
         android:id="@+id/editName"
@@ -19,7 +19,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginBottom="50dp"
         android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorBlack" />
+        android:textColorHint="@color/colorWhite" />
 
     <!--
     <EditText
@@ -65,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gewicht \nin kg"
+        android:textColor="@color/colorWhite"
         android:layout_below="@id/editName"
         android:textAlignment="center"
         />
@@ -74,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textNumberPickerGewicht"
+
         />
 </LinearLayout>
 <LinearLayout
@@ -91,6 +93,7 @@
         android:text="Größe \nin cm"
         android:layout_below="@id/editName"
         android:textAlignment="center"
+        android:textColor="@color/colorWhite"
         />
 
     <NumberPicker
@@ -98,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        style="@style/TimePickerTheme"
         />
 
 </LinearLayout>
@@ -114,12 +118,14 @@
             android:id="@+id/radioButtonMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"/>
+            android:text="Male"
+            android:textColor="@color/colorWhite"/>
         <RadioButton
             android:id="@+id/radioButtonFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"/>
+            android:text="Female"
+            android:textColor="@color/colorWhite"/>
 
     </RadioGroup>
 
