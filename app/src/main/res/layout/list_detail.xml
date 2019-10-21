@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:textSize="30sp"
-        android:textColor="@color/colorLightBlue"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold"
         android:layout_marginLeft="50dp"/>
 

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:padding="20dp"
         android:textSize="22sp"
         android:background="@drawable/button_main"
@@ -24,7 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_below="@id/buttonGoToCalculator"
+        android:layout_marginTop="30dp"
         android:padding="20dp"
         android:textSize="22sp"
         android:background="@drawable/button_main"
@@ -36,7 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
+        android:layout_below="@id/buttonGoToDatabase"
+        android:layout_marginTop="30dp"
         android:padding="20dp"
         android:textSize="22sp"
         android:background="@drawable/button_main"
@@ -44,9 +46,8 @@
         android:textColor="@color/colorWhite" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="246dp"
-        android:layout_marginTop="500dp"
-        android:paddingBottom="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="550dp"
         android:src="@drawable/bottle1" />
 </RelativeLayout>

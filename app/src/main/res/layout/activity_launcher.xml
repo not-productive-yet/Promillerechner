@@ -8,6 +8,20 @@
     android:background="@drawable/gradient_3"
     >
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="200dp"
+        android:text="Bitte beachten Sie, dass die Berechnungen nicht als Grundlage zur Feststellung der Fahrfähigkeit verwendet werden sollen."
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:justificationMode="inter_word"
+        />
+
     <Button
         android:id="@+id/buttonGoToMain"
         android:layout_width="wrap_content"
@@ -16,21 +30,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="OK"/>
-       <!-- android:textColor="@color/colorWhite"-->
-        <!--android:background="@drawable/button_border"/>-->
-        <!--android:background="@android:color/transparent"-->
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="190dp"
-        android:layout_gravity="center_vertical|end"
-        android:layout_marginTop="200dp"
-        android:text="Bitte beachten Sie, dass die Berechnungen nicht als Grundlage zur Feststellung der Fahrfähigkeit verwendet werden sollen."
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        />
 </RelativeLayout>
