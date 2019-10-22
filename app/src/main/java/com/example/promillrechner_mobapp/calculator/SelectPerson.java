@@ -23,7 +23,8 @@ import java.util.List;
 
 public class SelectPerson extends AppCompatActivity {
 
-    Button buttonGoToCreatePerson = null;
+    Button buttonGoToCreatePerson;
+    Button buttonGoToAlcohol;
     private PersonDao dao;
     private RecyclerView recyclerView;
     private RecyclerViewAdapterListChoose adapter;
@@ -34,22 +35,18 @@ public class SelectPerson extends AppCompatActivity {
         setContentView(R.layout.activity_calc_person);
 
         buttonGoToCreatePerson = findViewById(R.id.buttonGoToCreatePerson);
-
-
+        buttonGoToAlcohol = findViewById(R.id.buttonGoToAlcohol);
         recyclerView = findViewById(R.id.recyclerviewChoosePerson);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         adapter = new RecyclerViewAdapterListChoose(this);
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         dao = Room.getDatabase(this).person_dao();
 
-
-        buttonGoToCreatePerson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handlerGoToCreatePerson();
-            }
-        });
+        buttonGoToCreatePerson.setOnClickListener(view -> handlerGoToCreatePerson());
+        buttonGoToAlcohol.setOnClickListener(view -> handlerGoToAlcohol());
 
     }
 
@@ -75,6 +72,11 @@ public class SelectPerson extends AppCompatActivity {
 
     private void handlerGoToCreatePerson() {
         Intent intent = new Intent(this, PersonCreate.class);
+        startActivity(intent);
+    }
+
+    void handlerGoToAlcohol() {
+        Intent intent = new Intent(this, Alcohol.class);
         startActivity(intent);
     }
 }
