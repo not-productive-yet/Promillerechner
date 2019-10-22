@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Was hast du getrunken?"
+        android:text="Was hasch de gsoffe?"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textAlignment="center"
@@ -317,7 +317,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="620dp"
-        android:text="show results"/>
+        android:text="show results"
+        android:background="@drawable/button_layout"
+        android:padding="10dp"/>
 
 
 
