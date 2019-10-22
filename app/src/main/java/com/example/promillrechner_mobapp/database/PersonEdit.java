@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -56,8 +57,8 @@ public class PersonEdit extends AppCompatActivity {
         person = (Person) i.getSerializableExtra("person");
 
         textName.setText(person.getName());
-        textSize.setText(Integer.toString(person.getSize()) + " cm");
-        textWeight.setText(Double.toString(person.getWeight()) + " kg");
+        textSize.setText(Integer.toString(person.getSize()));
+        textWeight.setText(Double.toString(person.getWeight()));
 
         if (person.isMale())
             male.setChecked(true);
@@ -67,6 +68,7 @@ public class PersonEdit extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveWordOnClick();
                 finish();
             }
         });
@@ -78,7 +80,31 @@ public class PersonEdit extends AppCompatActivity {
             }
         });
 
-        //TODO: Update Database
 
+    }
+
+    class SpeichernTask extends AsyncTask<Person, Void , Void> {
+
+        @Override
+        protected Void doInBackground(Person... People) {
+            dao.insert(People[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid){
+            super.onPostExecute(aVoid);
+        }
+    }
+
+    private void saveWordOnClick(){
+        EditText name = findViewById(R.id.editEditName);
+        EditText size = findViewById(R.id.editEditSize);
+        EditText weight = findViewById(R.id.editEditWeight);
+        person.setName(name.getText().toString());
+        person.setSize(Integer.parseInt(size.getText().toString()));
+        person.setWeight(Integer.parseInt(weight.getText().toString()));
+
+        new SpeichernTask().execute(person);
     }
 }

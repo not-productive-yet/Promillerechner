@@ -31,6 +31,7 @@ public class Person implements Serializable {
     public String getName() {
         return name;
     }
+
     public int getWeight() {
         return weight;
     }
@@ -42,6 +43,17 @@ public class Person implements Serializable {
         return male;
     }
 
+    public void setMale(boolean male) { this.male = male; }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 }
