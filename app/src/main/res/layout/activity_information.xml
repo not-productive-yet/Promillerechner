@@ -9,10 +9,69 @@
     >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ergebnis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="END"
-        android:layout_centerInParent="true"
-        android:textColor="@color/colorWhite"/>
+        android:layout_marginTop="100dp"
+        android:textSize="20sp"
+        android:text="Promillewert = alc/(weight)*(liquid)"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorWhite"
+        />
+    <TextView
+        android:id="@+id/liquid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anteil der Körperflüssigkeit"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/ergebnis"
+        />
+    <TextView
+        android:id="@+id/graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Graphbeschreibung"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/liquid"
+        />
+    <TextView
+        android:id="@+id/ampel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ampel steht für ?"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/graph"
+        />
+    <TextView
+        android:id="@+id/alkohol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alkohol Prozent"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/ampel"
+        />
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZURÜCK"
+        android:layout_marginTop="60dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/alkohol"
+        />
+
+
 </RelativeLayout>
