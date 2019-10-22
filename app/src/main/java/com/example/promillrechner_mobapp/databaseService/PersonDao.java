@@ -22,7 +22,4 @@ public interface PersonDao {
 
     @Delete
     public void delete(Person name);
-
-    @Update
-    void update(Person person);
 }

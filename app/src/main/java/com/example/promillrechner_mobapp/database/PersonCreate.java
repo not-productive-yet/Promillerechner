@@ -3,6 +3,7 @@ package com.example.promillrechner_mobapp.database;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -32,7 +33,9 @@ public class PersonCreate extends AppCompatActivity {
     Button buttonCancelPerson = null;
     NumberPicker npSize = null;
     NumberPicker npWeight = null;
+    EditText editName = null;
     private PersonDao dao = null;
+    Context context = null;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -46,6 +49,8 @@ public class PersonCreate extends AppCompatActivity {
         buttonCancelPerson = findViewById(R.id.buttonCancelPerson);
         npSize = findViewById(R.id.numberPickerSize);
         npWeight = findViewById(R.id.numberPickerGewicht);
+        editName = findViewById(R.id.editName);
+        context = getApplicationContext();
 
         npSize.setMinValue(150);
         npSize.setMaxValue(210);
@@ -58,9 +63,14 @@ public class PersonCreate extends AppCompatActivity {
         buttonSavePerson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String textToast = editName.getText().toString()+" wurde erfolgreich gespeichert!";
+
+                Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
+                toast.show();
+
                 saveWordOnClick();
                 handlerGoToChooseAlcohol();
-                //finish();
             }
         });
         buttonCancelPerson.setOnClickListener(new View.OnClickListener() {
