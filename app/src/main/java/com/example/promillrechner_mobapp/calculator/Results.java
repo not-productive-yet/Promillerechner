@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.promillrechner_mobapp.MainActivity;
 import com.example.promillrechner_mobapp.R;
 import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
@@ -20,8 +21,9 @@ public class Results extends AppCompatActivity {
     private PersonDao dao;
     private List<Person> persons = Collections.EMPTY_LIST;
 
-    Button buttonGoToShowDiagram = null;
-    TextView textPromille = null;
+    Button buttonGoToShowDiagram;
+    Button buttonGoBackToMain;
+    TextView textPromille;
 
     Intent intent;
     double weight;
@@ -40,7 +42,9 @@ public class Results extends AppCompatActivity {
         //TODO: Daten von Person setzen und Promillewert berechnen
 
         buttonGoToShowDiagram = findViewById(R.id.buttonGoToShowDiagram);
-        textPromille = findViewById(R.id.textPromille);
+        buttonGoBackToMain = findViewById(R.id.buttonGoBackToMain);
+
+        textPromille = findViewById(R.id.textResultPromille);
         weight = intent.getDoubleExtra("Weight" , 0.0);
         male = false;
         alc = 24.0;
@@ -58,11 +62,18 @@ public class Results extends AppCompatActivity {
 
         textPromille.setText(Double.toString(result));
 
-        buttonGoToShowDiagram.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        buttonGoToShowDiagram.setOnClickListener(view -> handlerGoToDiagram());
+        buttonGoBackToMain.setOnClickListener(view -> handlerGoToMain());
+
+    }
+
+    private void handlerGoToDiagram() {
+        Intent intent = new Intent(this, Diagram.class);
+        startActivity(intent);
+    }
+
+    private void handlerGoToMain() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

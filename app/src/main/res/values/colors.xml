@@ -7,4 +7,6 @@
     <color name="colorBlack">#000000</color>
     <color name="colorLightBlue">#FF00FFFF</color>
     <color name="colorTrans">#80000000</color>
+    <color name="colorPurple">#7e3660</color>
+
 </resources>
