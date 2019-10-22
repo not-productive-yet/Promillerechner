@@ -45,6 +45,7 @@
 
 
     <TextView
+        android:id="@+id/counterBeer300"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:text="0"
@@ -81,6 +82,7 @@
         android:layout_marginTop="180dp">
 
         <Button
+            android:id="@+id/minusButtonBeer300"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -89,6 +91,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/plusButtonBeer300"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
