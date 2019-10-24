@@ -14,7 +14,7 @@ public class Information extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
 
-        Button button = (Button) findViewById(R.id.backbutton);
+        Button button = (Button) findViewById(R.id.backButton);
         button.setOnClickListener(this);
 
     }
