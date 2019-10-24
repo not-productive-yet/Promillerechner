@@ -53,8 +53,8 @@
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
         android:background="@drawable/counter"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="45dp" />
 
     <LinearLayout
         android:layout_marginLeft="70dp"
@@ -102,6 +102,18 @@
     </LinearLayout>
 
     <!--bier rechts-->
+    <TextView
+        android:id="@+id/counterBeer500"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:background="@drawable/counter"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="315dp" />
+
     <LinearLayout
         android:layout_marginLeft="220dp"
         android:layout_marginTop="100dp"
@@ -125,6 +137,7 @@
         android:layout_marginTop="180dp">
 
         <Button
+            android:id="@+id/minusButtonBeer500"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -133,6 +146,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/plusButtonBeer500"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -144,6 +158,18 @@
 
 
     <!--wein links-->
+    <TextView
+        android:id="@+id/counterWine300"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:background="@drawable/counter"
+        android:layout_marginTop="305dp"
+        android:layout_marginLeft="45dp" />
+
     <LinearLayout
         android:layout_marginLeft="70dp"
         android:layout_marginTop="270dp"
@@ -167,6 +193,7 @@
         android:layout_marginTop="350dp">
 
         <Button
+            android:id="@+id/minusButtonWine300"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -175,6 +202,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/plusButtonWine300"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -185,6 +213,18 @@
     </LinearLayout>
 
     <!--wein rechts-->
+    <TextView
+        android:id="@+id/counterWine500"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:background="@drawable/counter"
+        android:layout_marginTop="305dp"
+        android:layout_marginLeft="315dp" />
+
     <LinearLayout
         android:layout_marginLeft="220dp"
         android:layout_marginTop="270dp"
@@ -208,6 +248,7 @@
         android:layout_marginTop="350dp">
 
         <Button
+            android:id="@+id/minusButtonWine500"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -216,6 +257,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/plusButtonWine500"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -227,17 +269,29 @@
 
 
     <!--hartalk links-->
+    <TextView
+        android:id="@+id/counterLiq300"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:background="@drawable/counter"
+        android:layout_marginTop="470dp"
+        android:layout_marginLeft="45dp" />
+
     <LinearLayout
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="430dp"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:background="@drawable/layout_list_item">
         <ImageView
             android:layout_width="100dp"
             android:layout_height="80dp"
-            android:src="@drawable/vodka"
-            android:padding="9dp"
+            android:src="@drawable/longdrink"
+            android:padding="4dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="7dp"
             />
@@ -251,6 +305,7 @@
         android:layout_marginTop="520dp">
 
         <Button
+            android:id="@+id/minusButtonLiq300"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -259,6 +314,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/plusButtonLiq300"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -269,17 +325,29 @@
     </LinearLayout>
 
     <!--hartalk rechts-->
+    <TextView
+        android:id="@+id/counterLiq500"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:background="@drawable/counter"
+        android:layout_marginTop="470dp"
+        android:layout_marginLeft="315dp" />
+
     <LinearLayout
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginLeft="225dp"
+        android:layout_marginTop="430dp"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:background="@drawable/layout_list_item">
         <ImageView
             android:layout_width="100dp"
             android:layout_height="80dp"
-            android:src="@drawable/vodka"
-            android:padding="5dp"
+            android:src="@drawable/longdrink"
+            android:padding="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="7dp"
             />
@@ -292,6 +360,7 @@
         android:layout_marginTop="520dp">
 
         <Button
+            android:id="@+id/minusButtonLiq500"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -300,6 +369,7 @@
             android:textSize="20dp"/>
 
         <Button
+            android:id="@+id/plusButtonLiq500"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
