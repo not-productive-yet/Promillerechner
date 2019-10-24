@@ -8,69 +8,129 @@
     android:background="@drawable/background_gradient_stars"
     >
 
-    <TextView
-        android:id="@+id/ergebnis"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/layoutInfo"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textSize="20sp"
-        android:text="Promillewert = alc/(weight)*(liquid)"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/colorWhite"
-        />
-    <TextView
-        android:id="@+id/liquid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Anteil der Körperflüssigkeit"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/colorWhite"
-        android:layout_below="@+id/ergebnis"
-        />
-    <TextView
-        android:id="@+id/graph"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Graphbeschreibung"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/colorWhite"
-        android:layout_below="@+id/liquid"
-        />
-    <TextView
-        android:id="@+id/ampel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ampel steht für ?"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/colorWhite"
-        android:layout_below="@+id/graph"
-        />
-    <TextView
-        android:id="@+id/alkohol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="alkohol Prozent"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorWhite"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@+id/ampel"
-        />
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:background="@drawable/layout_list_item">
+
+        <TextView
+            android:id="@+id/ergebnis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="Der Promillewert wird anhand des getrunkenen Alkohols und den Gewicht berechnet. Abhängig von dem Geschlecht ist auch der Wassergehalt im Körper unterschiedlich. Männer enthalten 0,68% und Frauen 0.55%"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/ergebnisFormel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            android:text="Promillewert = alc/(weight)*(liquid)"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/liquid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anteil der Körperflüssigkeit"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/graph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Graphbeschreibung"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/ampel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ampel steht für ?"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/alkohol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alkohol Prozentwerte"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/textAlkoholBier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bier 3,9%"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="30dp"
+            />
+        <TextView
+            android:id="@+id/textAlkoholWein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wein 12,5%"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="30dp"
+            />
+        <TextView
+            android:id="@+id/textAlkoholSchnaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schnaps 38,5%"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="30dp"
+            />
+    </LinearLayout>
+
+
     <Button
-        android:id="@+id/backbutton"
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ZURÜCK"
-        android:layout_marginTop="60dp"
+        android:text="Zurück"
+        android:textAllCaps="true"
+        android:layout_alignParentBottom="true"
         android:textSize="20sp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/alkohol"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_layout"
+        android:padding="10dp"
         />
 
 

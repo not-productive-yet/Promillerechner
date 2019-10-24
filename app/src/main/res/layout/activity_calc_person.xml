@@ -18,6 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Person"
+        android:padding="10dp"
+        android:background="@drawable/button_layout"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/recyclerviewChoosePerson"/>
 

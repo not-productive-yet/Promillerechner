@@ -51,7 +51,7 @@
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
         />
-    -->
+-->
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -68,6 +68,8 @@
         android:textColor="@color/colorWhite"
         android:layout_below="@id/editName"
         android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
         />
 
     <NumberPicker
@@ -84,16 +86,19 @@
     android:layout_below="@id/editName"
     android:orientation="vertical"
     android:id="@+id/Size"
-    android:layout_marginLeft="80dp">
+    android:layout_marginLeft="80dp"
+    >
 
     <TextView
         android:id="@+id/textNumberPickerSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Größe \nin cm"
+        android:textStyle="bold"
         android:layout_below="@id/editName"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
+        android:layout_marginBottom="10dp"
         />
 
     <NumberPicker
@@ -110,26 +115,33 @@
         android:id="@+id/radioGroupEditGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Size"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp">
-
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/Size"
+        android:background="@drawable/pink_outline"
+        android:orientation="horizontal"
+        android:layout_margin="50dp">
         <RadioButton
             android:id="@+id/radioButtonMale"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:text="Male"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/toggle_selector"
+            android:button="@null"
+            android:checked="true"
+            android:padding="20dp"
+            />
         <RadioButton
             android:id="@+id/radioButtonFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female"
-            android:textColor="@color/colorWhite"/>
-
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/toggle_selector"
+            android:button="@null"
+            android:padding="20dp" />
     </RadioGroup>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,17 +153,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
+            android:textColor="@color/colorWhite"
             android:layout_weight="1"
-            android:background="@color/colorWhite"/>
+            android:background="@drawable/button_main"
+            android:layout_margin="2dp"
+            />
 
         <Button
             android:id="@+id/buttonSavePerson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
+            android:textColor="@color/colorWhite"
             android:layout_toRightOf="@id/buttonEditCancelPerson"
             android:layout_weight="1"
-            android:background="@color/colorWhite"
+            android:background="@drawable/button_main"
+            android:layout_margin="2dp"
             />
     </LinearLayout>
 
