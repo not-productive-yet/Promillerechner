@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".database.PersonCreate"
-    android:background="@drawable/background_gradient_stars">>
+    android:background="@drawable/background_gradient_stars">
 
     <EditText
         android:id="@+id/editName"
@@ -13,62 +12,30 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:hint="Your Name"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="70dp"
         android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite" />
+        android:textColorHint="@color/colorLightGray" />
 
-    <!--
-    <EditText
-        android:id="@+id/editWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/editName"
-        android:hint="Gewicht"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
-        />
-
-    <EditText
-        android:id="@+id/editSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_below="@id/editWeight"
-        android:hint="Größe"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/colorWhite"
-        android:textColorHint="@color/colorWhite"
-        />
--->
 <LinearLayout
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@id/editName"
     android:orientation="vertical"
-    android:layout_toRightOf="@+id/Size"
-    android:layout_marginLeft="100dp">
+    android:layout_alignParentEnd="true"
+    android:layout_marginEnd="80dp">
 
     <TextView
         android:id="@+id/textNumberPickerGewicht"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editName"
         android:layout_marginBottom="10dp"
-        android:text="Gewicht \nin kg"
+        android:text="Gewicht\nin kg"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
@@ -79,7 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.Picker"
-        android:gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
         />
 </LinearLayout>
 <LinearLayout
@@ -88,7 +56,7 @@
     android:layout_below="@id/editName"
     android:orientation="vertical"
     android:id="@+id/Size"
-    android:layout_marginLeft="80dp"
+    android:layout_marginStart="80dp"
     >
 
     <TextView
@@ -98,7 +66,6 @@
         android:text="Größe\nin cm"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_below="@id/editName"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:layout_marginBottom="10dp"
@@ -108,7 +75,6 @@
         android:id="@+id/numberPickerSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:theme="@style/AppTheme.Picker"
         />
 
@@ -130,11 +96,12 @@
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:text="Male"
+            android:textSize="20sp"
             android:textColor="@color/colorWhite"
             android:background="@drawable/toggle_selector"
             android:button="@null"
             android:checked="true"
-            android:padding="20dp"
+            android:padding="15dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             />
@@ -143,10 +110,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Female"
+            android:textSize="20sp"
             android:textColor="@color/colorWhite"
             android:background="@drawable/toggle_selector"
             android:button="@null"
-            android:padding="20dp"
+            android:padding="15dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"/>
     </RadioGroup>
@@ -173,7 +141,6 @@
             android:layout_height="wrap_content"
             android:text="Save"
             android:textColor="@color/colorWhite"
-            android:layout_toRightOf="@id/buttonEditCancelPerson"
             android:layout_weight="1"
             android:background="@drawable/button_main"
             android:layout_margin="2dp"

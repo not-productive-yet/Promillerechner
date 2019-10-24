@@ -22,6 +22,8 @@ import java.util.List;
 
 public class PersonList extends AppCompatActivity {
 
+
+    private Button buttonBack;
     private PersonDao dao;
     private RecyclerView recyclerView;
     private RecyclerViewAdapterList adapter;
@@ -30,6 +32,9 @@ public class PersonList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_person_list);
+
+        buttonBack = findViewById(R.id.backButtonList);
+        dao = Room.getDatabase(this).person_dao();
 
         recyclerView = findViewById(R.id.recyclerviewPerson);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -42,6 +47,9 @@ public class PersonList extends AppCompatActivity {
                 Intent intent = new Intent(PersonList.this, PersonEdit.class);
                 intent.putExtra("person", position);
                 startActivity(intent);
+
+                //Fade right
+                overridePendingTransition(R.xml.enter, R.xml.exit);
             }
 
             @Override
@@ -50,7 +58,8 @@ public class PersonList extends AppCompatActivity {
             }
         });
 
-        dao = Room.getDatabase(this).person_dao();
+        buttonBack.setOnClickListener(v -> finish());
+
     }
 
     @Override

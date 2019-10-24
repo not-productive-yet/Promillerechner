@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +25,7 @@
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             android:text="Der Promillewert wird anhand des getrunkenen Alkohols und den Gewicht berechnet. Abhängig von dem Geschlecht ist auch der Wassergehalt im Körper unterschiedlich. Männer enthalten 0,68% und Frauen 0.55%"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
             />
 
@@ -49,7 +48,7 @@
             android:text="Anteil der Körperflüssigkeit"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
             />
 
@@ -60,7 +59,7 @@
             android:text="Graphbeschreibung"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
             />
 
@@ -71,7 +70,7 @@
             android:text="Ampel steht für ?"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
             />
 
@@ -84,7 +83,7 @@
             android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textColor="@color/colorWhite"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             />
         <TextView
             android:id="@+id/textAlkoholBier"
@@ -94,7 +93,7 @@
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             android:textColor="@color/colorWhite"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             />
         <TextView
             android:id="@+id/textAlkoholWein"
@@ -104,7 +103,7 @@
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             android:textColor="@color/colorWhite"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             />
         <TextView
             android:id="@+id/textAlkoholSchnaps"
@@ -114,7 +113,7 @@
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             android:textColor="@color/colorWhite"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             />
     </LinearLayout>
 
@@ -127,7 +126,7 @@
         android:textAllCaps="true"
         android:layout_alignParentBottom="true"
         android:textSize="20sp"
-        android:layout_marginLeft="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:background="@drawable/button_layout"
         android:padding="10dp"

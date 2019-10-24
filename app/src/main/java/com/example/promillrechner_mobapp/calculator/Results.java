@@ -53,6 +53,9 @@ public class Results extends AppCompatActivity {
     private void handlerGoToDiagram() {
         Intent intent = new Intent(this, Diagram.class);
         startActivity(intent);
+
+        //Fade right
+        overridePendingTransition(R.xml.enter, R.xml.exit);
     }
 
     private void handlerGoToMain() {
