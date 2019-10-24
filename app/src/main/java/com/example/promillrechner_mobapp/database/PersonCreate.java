@@ -25,7 +25,7 @@ import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 import com.example.promillrechner_mobapp.databaseService.Room;
 
-import static com.example.promillrechner_mobapp.R.style.TimePickerTheme;
+import static com.example.promillrechner_mobapp.R.style.AppTheme_Picker;
 
 public class PersonCreate extends AppCompatActivity {
 
