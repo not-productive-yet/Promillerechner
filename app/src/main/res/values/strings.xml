@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Promillrechner</string>
+    <string name="your_name">Your Name</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="zurueck">Zurück</string>
+    <string name="sichern">Sichern</string>
 </resources>

@@ -5,19 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
 
 import com.example.promillrechner_mobapp.R;
 import com.example.promillrechner_mobapp.calculator.Alcohol;
@@ -25,7 +22,6 @@ import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 import com.example.promillrechner_mobapp.databaseService.Room;
 
-import static com.example.promillrechner_mobapp.R.style.AppTheme_Picker;
 
 public class PersonCreate extends AppCompatActivity {
 
@@ -34,7 +30,9 @@ public class PersonCreate extends AppCompatActivity {
     NumberPicker npSize = null;
     NumberPicker npWeight = null;
     EditText editName = null;
-    private PersonDao dao = null;
+    RadioButton radioButton = null;
+    RadioGroup gender= null;
+    PersonDao dao = null;
     Context context = null;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -50,6 +48,7 @@ public class PersonCreate extends AppCompatActivity {
         npSize = findViewById(R.id.numberPickerSize);
         npWeight = findViewById(R.id.numberPickerGewicht);
         editName = findViewById(R.id.editName);
+        gender = findViewById(R.id.radioGroupEditGender);
         context = getApplicationContext();
 
         npSize.setMinValue(150);
@@ -62,7 +61,13 @@ public class PersonCreate extends AppCompatActivity {
 
         buttonSavePerson.setOnClickListener(v -> {
 
-            if(editName.getText().toString().equals(null)){
+            if(editName.getText().toString().matches("")){
+                String textToast = "Bitte geben Sie einen Namen ein";
+
+                Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else{
                 String textToast = editName.getText().toString()+" wurde erfolgreich gespeichert!";
 
                 Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
@@ -71,25 +76,18 @@ public class PersonCreate extends AppCompatActivity {
                 saveWordOnClick();
                 handlerGoToChooseAlcohol();
             }
-            else{
-                String textToast = "Bitte geben Sie einen Namen ein";
+        });
 
-                Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-        
-        buttonCancelPerson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        buttonCancelPerson.setOnClickListener(v -> finish());
     }
 
     private void handlerGoToChooseAlcohol() {
         Intent intent = new Intent(this, Alcohol.class);
+        intent.putExtra("weight", npWeight.getValue());
+        //intent.putExtra("male", gender.);
         startActivity(intent);
+
+        //Fade right
         overridePendingTransition(R.xml.enter, R.xml.exit);
     }
 
@@ -108,9 +106,9 @@ public class PersonCreate extends AppCompatActivity {
     }
 
     private void saveWordOnClick(){
-        EditText name = findViewById(R.id.editName);
-        RadioButton gender = findViewById(R.id.radioButtonMale);
-        new SpeichernTask().execute(new Person(name.getText().toString(), npWeight.getValue(), npSize.getValue(), false));
+        int selectedId = gender.getCheckedRadioButtonId();
+        radioButton = findViewById(selectedId);
+        new SpeichernTask().execute(new Person(editName.getText().toString(), npWeight.getValue(), npSize.getValue(), false));
     }
 
 }
