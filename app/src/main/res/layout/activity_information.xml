@@ -5,8 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".Information"
     android:background="@drawable/background_gradient_stars"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
     >
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="650dp">
     <LinearLayout
         android:id="@+id/layoutInfo"
         android:layout_width="match_parent"
@@ -50,28 +53,74 @@
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             />
 
         <TextView
-            android:id="@+id/graph"
+            android:id="@+id/weiblich"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Graphbeschreibung"
-            android:layout_marginTop="20dp"
+            android:text="Frauen: 55%"
+            android:layout_marginTop="10dp"
             android:textSize="20sp"
-            android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
+            android:layout_marginStart="30dp"
+            />
+
+        <TextView
+            android:id="@+id/männlich"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Männer: 68%"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="30dp"
             />
 
         <TextView
             android:id="@+id/ampel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ampel steht für ?"
+            android:text="Ergebnis"
+            android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/grün"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grün: Promillewert &lt; 0,5‰"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="30dp"
+            />
+
+        <TextView
+            android:id="@+id/gelb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gelb: Promillewert &lt; 1,5‰"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="30dp"
+            />
+
+        <TextView
+            android:id="@+id/rot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rot: Promillewert &gt; 1,5‰"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="30dp"
             />
 
         <TextView
@@ -115,7 +164,19 @@
             android:textColor="@color/colorWhite"
             android:layout_marginStart="30dp"
             />
+
+        <TextView
+            android:id="@+id/graph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Graphbeschreibung"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/colorWhite"
+            />
     </LinearLayout>
+</ScrollView>
 
 
     <Button
