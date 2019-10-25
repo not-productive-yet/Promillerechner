@@ -60,10 +60,9 @@ public class PersonCreate extends AppCompatActivity {
         npWeight.setMaxValue(120);
         npWeight.setValue(80);
 
-        buttonSavePerson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buttonSavePerson.setOnClickListener(v -> {
 
+            if(editName.getText().toString().equals(null)){
                 String textToast = editName.getText().toString()+" wurde erfolgreich gespeichert!";
 
                 Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
@@ -72,7 +71,14 @@ public class PersonCreate extends AppCompatActivity {
                 saveWordOnClick();
                 handlerGoToChooseAlcohol();
             }
+            else{
+                String textToast = "Bitte geben Sie einen Namen ein";
+
+                Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
+                toast.show();
+            }
         });
+        
         buttonCancelPerson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
