@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.promillrechner_mobapp.R;
 import com.example.promillrechner_mobapp.calculator.Alcohol;
+import com.example.promillrechner_mobapp.calculator.SelectPerson;
 import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 import com.example.promillrechner_mobapp.databaseService.Room;
@@ -84,9 +85,9 @@ public class PersonCreate extends AppCompatActivity {
     }
 
     private void handlerGoToChooseAlcohol() {
-        Intent intent = new Intent(this, Alcohol.class);
-        intent.putExtra("weight", npWeight.getValue());
-        intent.putExtra("male", gender.getCheckedRadioButtonId());
+        Intent intent = new Intent(this, SelectPerson.class);
+        /*intent.putExtra("weight", npWeight.getValue());
+        intent.putExtra("male", gender.getCheckedRadioButtonId());*/
         startActivity(intent);
 
         //Fade right

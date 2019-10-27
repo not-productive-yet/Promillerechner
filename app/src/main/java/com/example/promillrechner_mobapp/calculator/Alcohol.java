@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.promillrechner_mobapp.R;
+import com.example.promillrechner_mobapp.RecyclerViewAdapterListChoose;
 
 public class Alcohol extends AppCompatActivity {
 
@@ -95,10 +97,8 @@ public class Alcohol extends AppCompatActivity {
         plusButtonLiq500.setOnClickListener(view -> handleGetText(view));
         minusButtonLiq500.setOnClickListener(view -> handleGetText(view));
 
-        Intent intent = new Intent();
-        boolean male = intent.getBooleanExtra("male", true);
-        double weight = intent.getDoubleExtra("weight", 80.0);
-        buttonGoToShowPromille.setOnClickListener(view -> handlerGoToShowPromille(male, weight));
+        Intent intent =  getIntent();
+        buttonGoToShowPromille.setOnClickListener(view -> handlerGoToShowPromille(intent));
 
     }
 
@@ -174,8 +174,10 @@ public class Alcohol extends AppCompatActivity {
         }
     }
 
-    private void handlerGoToShowPromille(boolean male, double weight) {
+    private void handlerGoToShowPromille(Intent prev) {
         Intent intent = new Intent(this, Results.class);
+        boolean male = prev.getBooleanExtra("male", true);
+        double weight = prev.getDoubleExtra("weight", 80.0);
 
         int beer300 = Integer.valueOf(counterBeer300.getText().toString());
         int beer500 = Integer.valueOf(counterBeer500.getText().toString());
@@ -193,6 +195,8 @@ public class Alcohol extends AppCompatActivity {
 
         intent.putExtra("male", male);
         intent.putExtra("weight", weight);
+
+        Log.v("testinghere", (""+ weight));
 
         startActivity(intent);
 

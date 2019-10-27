@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.promillrechner_mobapp.MainActivity;
 import com.example.promillrechner_mobapp.R;
+import com.example.promillrechner_mobapp.RecyclerViewAdapterListChoose;
 import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 
@@ -75,7 +77,6 @@ public class Results extends AppCompatActivity {
         double weight = intent.getDoubleExtra("weight" , 60.0);
         boolean male = intent.getBooleanExtra("male", true);
 
-        //Todo intents wirklich holen, momentan arbeitet er mit defaults
         int countBeer300 = intent.getIntExtra("counterBeer300", 0);
         int countBeer500 = intent.getIntExtra("counterBeer500", 0);
         int countLiq300 = intent.getIntExtra("counterWine300", 0);
@@ -93,7 +94,6 @@ public class Results extends AppCompatActivity {
         }
         else
             liquid = 0.55;
-
         double res = (alc/(weight*liquid));
 
         //rundet auf 2 nachkommastellen
@@ -102,18 +102,20 @@ public class Results extends AppCompatActivity {
 
     private String setResultText (double result) {
 
-        if(result < 0.3)
-            return "0.3 result text";
-        else if(0.3 < result && result <0.8)
-            return "0.3 bis 0.8 text";
+        if(result== 0)
+            return getString(R.string.promilleText0);
+        else if(result < 0.5)
+            return getString(R.string.promilleText1);
+        else if(0.5 < result && result <0.8)
+            return getString(R.string.promilleText2);
         else if(0.8 < result && result <1)
-            return "0.8 bis 1text";
+            return getString(R.string.promilleText3);
         else if(1 < result && result <2)
-            return "1 bis 2 text";
+            return getString(R.string.promilleText4);
         else if(2 < result && result <3)
-            return "2 bis 3 text";
+            return getString(R.string.promilleText5);
         else
-            return "3 bis tod text";
+            return getString(R.string.promilleText6);
     }
 }
 

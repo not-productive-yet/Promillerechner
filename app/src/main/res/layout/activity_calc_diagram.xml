@@ -21,7 +21,7 @@
         />
 
     <com.jjoe64.graphview.GraphView
-        android:layout_width = "370dp"
+        android:layout_width = "380dp"
         android:layout_height = "200dip"
         android:id = "@+id/graph"
         android:layout_below="@+id/diagramTitle"

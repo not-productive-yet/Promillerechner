@@ -1,22 +1,17 @@
 package com.example.promillrechner_mobapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.promillrechner_mobapp.calculator.Alcohol;
 import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 import com.example.promillrechner_mobapp.databaseService.Room;
@@ -26,9 +21,11 @@ import java.util.List;
 
 public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<RecyclerViewAdapterListChoose.ViewHolder> {
 
-    //private static RecyclerViewClickListener itemListener;
     private List<Person> persons = Collections.emptyList();
 
+    public static RadioButton lastCheckedRB = null;
+    public static double weight = 0.0;
+    public static boolean male = true;
 
     Context mContext;
     private PersonDao dao;
@@ -41,7 +38,6 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_simple, parent, false);
-        //RecyclerView.ViewHolder holder = new ViewHolder(view);
         return new ViewHolder(view);
     }
 
@@ -53,26 +49,27 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
         RadioButton textName = holder.itemView.findViewById(R.id.textName1);
         textName.setText(persons.get(position).getName());
 
-        /*holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        textName.setOnClickListener(v -> {
 
-                boolean check = textName.isChecked();
-
-                    if(check){
-                        textName.setChecked(true);
-                    } else {
-                        textName.setChecked(false);
-                    }
-
-
+            RadioButton current = (RadioButton) v;
+            if(lastCheckedRB != null){
+                lastCheckedRB.setChecked(false);
             }
-        });*/
+            lastCheckedRB = current;
+
+            saveNewState(persons.get(position).getWeight(), persons.get(position).isMale());
+
+        });
     }
 
     @Override
     public int getItemCount() {
         return persons.size();
+    }
+
+    public void saveNewState(double weight, boolean male){
+        this.weight = weight;
+        this.male = male;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

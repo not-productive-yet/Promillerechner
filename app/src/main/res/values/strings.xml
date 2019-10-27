@@ -5,4 +5,12 @@
     <string name="female">Female</string>
     <string name="zurueck">Zurück</string>
     <string name="sichern">Sichern</string>
+
+    <string name="promilleText0">Die App war also eine Geldverschwendung. Deine Leber wird dir aber im Gegensatz zu deinem Geldbeutel dankbar sein.</string>
+    <string name="promilleText1">Deine Reaktionenszeit ist zusammen mit der Wahrscheinlichkeit neue Freunde zu finden erhöht. Falls du noch Fahranfänger bist solltest du kein Auto mehr fahren.</string>
+    <string name="promilleText2">Du siehst 15% schlechter und hören tust du auch nicht mehr so gut. Hol dir ein Taxi nach Hause und vergiss nicht dich bei den ganzen Menschen die du anrempeln wirst zu entschuldigen. </string>
+    <string name="promilleText3">Konzentrationschwäche, Tunnelblick, Euphorie. Würde Whatsapp lieber sein lassen.</string>
+    <string name="promilleText4">Rauschstadium. Sprach- und Gleichgewichtstörungen. Ich hoffe du hast ein Paar Freunde, die dich nach Hause bringen. </string>
+    <string name="promilleText5">Betäubgunsstadium. Professionelle hilfe evtl gefragt. Reaktionen und Fähigkeit sich zu bewegen kaum vorhanden. Muskelschlaffungen auch möglich.</string>
+    <string name="promilleText6">Lähmungsstadium. Der Sensenmann lässt grüßen.</string>
 </resources>

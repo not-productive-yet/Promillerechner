@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.example.promillrechner_mobapp.RecyclerViewAdapterList;
 import com.example.promillrechner_mobapp.database.PersonCreate;
@@ -76,10 +79,19 @@ public class SelectPerson extends AppCompatActivity {
     }
 
     void handlerGoToAlcohol() {
+        if(RecyclerViewAdapterListChoose.lastCheckedRB == null){
+            Toast toast = Toast.makeText(this, "Select a person", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
         Intent intent = new Intent(this, Alcohol.class);
 
-        double weight = 80.0;
-        boolean male = true;
+        double weight = RecyclerViewAdapterListChoose.weight;
+        boolean male = RecyclerViewAdapterListChoose.male;
+
+
+        Log.v("testinghere", (""+ weight));
+
 
         intent.putExtra("weight", weight);
         intent.putExtra("male", male);
