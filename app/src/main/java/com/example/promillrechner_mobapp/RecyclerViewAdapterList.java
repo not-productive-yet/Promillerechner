@@ -1,26 +1,20 @@
 package com.example.promillrechner_mobapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.promillrechner_mobapp.database.PersonEdit;
 import com.example.promillrechner_mobapp.databaseService.Person;
 import com.example.promillrechner_mobapp.databaseService.PersonDao;
 import com.example.promillrechner_mobapp.databaseService.Room;
 
-import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 

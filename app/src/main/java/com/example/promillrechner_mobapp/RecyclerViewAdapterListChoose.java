@@ -6,7 +6,10 @@ import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 
@@ -21,7 +24,7 @@ import com.example.promillrechner_mobapp.databaseService.Room;
 import java.util.Collections;
 import java.util.List;
 
-public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<RecyclerViewAdapterListChoose.ViewHolder> implements View.OnClickListener {
+public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<RecyclerViewAdapterListChoose.ViewHolder> {
 
     //private static RecyclerViewClickListener itemListener;
     private List<Person> persons = Collections.emptyList();
@@ -38,7 +41,7 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_simple, parent, false);
-        RecyclerView.ViewHolder holder = new ViewHolder(view);
+        //RecyclerView.ViewHolder holder = new ViewHolder(view);
         return new ViewHolder(view);
     }
 
@@ -46,10 +49,25 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     public void onBindViewHolder(@NonNull RecyclerViewAdapterListChoose.ViewHolder holder, final int position) {
         dao = Room.getDatabase(mContext).person_dao();
 
-        TextView textName = holder.itemView.findViewById(R.id.textName1);
+
+        RadioButton textName = holder.itemView.findViewById(R.id.textName1);
         textName.setText(persons.get(position).getName());
 
-        holder.parentLayout.setOnClickListener(this);
+        /*holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                boolean check = textName.isChecked();
+
+                    if(check){
+                        textName.setChecked(true);
+                    } else {
+                        textName.setChecked(false);
+                    }
+
+
+            }
+        });*/
     }
 
     @Override
@@ -57,23 +75,16 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
         return persons.size();
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(v.getContext(), Alcohol.class);
-        v.getContext().startActivity(intent);
-    }
-
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textName;
         LinearLayout parentLayout;
+        RadioButton checkedTextView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textName = itemView.findViewById(R.id.textName1);
             parentLayout = itemView.findViewById(R.id.parentLayoutList);
+            checkedTextView = itemView.findViewById(R.id.textName1);
         }
     }
     public void setPersons(List<Person> persons){

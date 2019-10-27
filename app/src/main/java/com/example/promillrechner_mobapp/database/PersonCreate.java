@@ -84,7 +84,7 @@ public class PersonCreate extends AppCompatActivity {
     private void handlerGoToChooseAlcohol() {
         Intent intent = new Intent(this, Alcohol.class);
         intent.putExtra("weight", npWeight.getValue());
-        //intent.putExtra("male", gender.);
+        intent.putExtra("male", gender.getCheckedRadioButtonId());
         startActivity(intent);
 
         //Fade right

@@ -94,6 +94,8 @@ public class Alcohol extends AppCompatActivity {
         plusButtonLiq500.setOnClickListener(view -> handleGetText(view));
         minusButtonLiq500.setOnClickListener(view -> handleGetText(view));
 
+        Intent intent = new Intent();
+        intent.getExtras();
         buttonGoToShowPromille.setOnClickListener(view -> handlerGoToShowPromille());
 
     }
@@ -180,12 +182,14 @@ public class Alcohol extends AppCompatActivity {
         int liq300 = Integer.valueOf(counterLiq300.getText().toString());
         int liq500 = Integer.valueOf(counterLiq500.getText().toString());
 
-        intent.putExtra("beer300", beer300);
-        intent.putExtra("beer500", beer500);
-        intent.putExtra("wine300", wine300);
-        intent.putExtra("wine500", wine500);
-        intent.putExtra("liq300", liq300);
-        intent.putExtra("liq500", liq500);
+        intent.putExtra("counterBeer300", beer300);
+        intent.putExtra("counterBeer500", beer500);
+        intent.putExtra("counterWine300", wine300);
+        intent.putExtra("counterWine500", wine500);
+        intent.putExtra("counterLiq300", liq300);
+        intent.putExtra("counterLiq500", liq500);
+
+        //intent.putExtra("male",)
 
         startActivity(intent);
 

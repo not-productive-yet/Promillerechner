@@ -21,6 +21,7 @@ public class Results extends AppCompatActivity {
     Button buttonGoToShowDiagram;
     Button buttonGoBackToMain;
     TextView textPromille;
+    TextView textResultInfo;
 
     //alkoholgehalt in gramm
     double alcBeer300 = 12;
@@ -40,13 +41,18 @@ public class Results extends AppCompatActivity {
         buttonGoToShowDiagram = findViewById(R.id.buttonGoToShowDiagram);
         buttonGoBackToMain = findViewById(R.id.buttonGoBackToMain);
         textPromille = findViewById(R.id.textResultPromille);
+        textResultInfo = findViewById(R.id.textResultInfo);
 
-        double result = calculatePromille();
+        Intent intent = getIntent();
+
+        double result = calculatePromille(intent);
         textPromille.setText(Double.toString(result));
 
+        textResultInfo.setText(setResultText(result));
 
         buttonGoToShowDiagram.setOnClickListener(view -> handlerGoToDiagram());
         buttonGoBackToMain.setOnClickListener(view -> handlerGoToMain());
+
 
     }
 
@@ -63,10 +69,9 @@ public class Results extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private double calculatePromille(){
+    private double calculatePromille(Intent intent){
 
-        Intent intent = getIntent();
-        double weight = intent.getDoubleExtra("Weight" , 60.0);
+        double weight = intent.getDoubleExtra("weight" , 60.0);
         boolean male = intent.getBooleanExtra("male", true);
 
         //Todo intents wirklich holen, momentan arbeitet er mit defaults
@@ -92,6 +97,22 @@ public class Results extends AppCompatActivity {
 
         //rundet auf 2 nachkommastellen
         return Math.round(res*100)/100.0;
+    }
+
+    private String setResultText (double result) {
+
+        if(result < 0.3)
+            return "0.3 result text";
+        else if(0.3 < result && result <0.8)
+            return "0.3 bis 0.8 text";
+        else if(0.8 < result && result <1)
+            return "0.8 bis 1text";
+        else if(1 < result && result <2)
+            return "1 bis 2 text";
+        else if(2 < result && result <3)
+            return "2 bis 3 text";
+        else
+            return "3 bis tod text";
     }
 }
 
