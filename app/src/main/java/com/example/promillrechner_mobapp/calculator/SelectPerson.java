@@ -78,11 +78,11 @@ public class SelectPerson extends AppCompatActivity {
     void handlerGoToAlcohol() {
         Intent intent = new Intent(this, Alcohol.class);
 
-        /*double weight;
-        double male;
+        double weight = 80.0;
+        boolean male = true;
 
         intent.putExtra("weight", weight);
-        intent.putExtra("male", male);*/
+        intent.putExtra("male", male);
 
         startActivity(intent);
     }

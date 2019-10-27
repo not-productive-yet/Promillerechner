@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -95,8 +96,9 @@ public class Alcohol extends AppCompatActivity {
         minusButtonLiq500.setOnClickListener(view -> handleGetText(view));
 
         Intent intent = new Intent();
-        intent.getExtras();
-        buttonGoToShowPromille.setOnClickListener(view -> handlerGoToShowPromille());
+        boolean male = intent.getBooleanExtra("male", true);
+        double weight = intent.getDoubleExtra("weight", 80.0);
+        buttonGoToShowPromille.setOnClickListener(view -> handlerGoToShowPromille(male, weight));
 
     }
 
@@ -172,7 +174,7 @@ public class Alcohol extends AppCompatActivity {
         }
     }
 
-    private void handlerGoToShowPromille() {
+    private void handlerGoToShowPromille(boolean male, double weight) {
         Intent intent = new Intent(this, Results.class);
 
         int beer300 = Integer.valueOf(counterBeer300.getText().toString());
@@ -189,7 +191,8 @@ public class Alcohol extends AppCompatActivity {
         intent.putExtra("counterLiq300", liq300);
         intent.putExtra("counterLiq500", liq500);
 
-        //intent.putExtra("male",)
+        intent.putExtra("male", male);
+        intent.putExtra("weight", weight);
 
         startActivity(intent);
 

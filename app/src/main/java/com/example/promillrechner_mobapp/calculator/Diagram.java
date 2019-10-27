@@ -33,7 +33,7 @@ public class Diagram extends AppCompatActivity {
         buttonGoBackToMain.setOnClickListener(view -> handlerGoBackToMain());
 
         Intent intent = getIntent();
-        double result = 0.5;
+        double result = intent.getDoubleExtra("result", 0.5);
         double nüchternIn = result/0.1;
 
         GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
@@ -55,7 +55,7 @@ public class Diagram extends AppCompatActivity {
         graph.addSeries(series);
 
         infoText = findViewById(R.id.infoText);
-        infoText.setText("Du bist in " + nüchternIn + " Stunden wieder nüchtern");
+        infoText.setText("Du bist in " + Math.round(nüchternIn*100)/100.0 + " Stunden wieder nüchtern");
 
 
 

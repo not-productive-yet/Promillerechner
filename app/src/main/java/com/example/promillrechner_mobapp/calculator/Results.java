@@ -76,12 +76,12 @@ public class Results extends AppCompatActivity {
         boolean male = intent.getBooleanExtra("male", true);
 
         //Todo intents wirklich holen, momentan arbeitet er mit defaults
-        int countBeer300 = intent.getIntExtra("countBeer300", 0);
-        int countBeer500 = intent.getIntExtra("countBeer500", 0);
-        int countLiq300 = intent.getIntExtra("countWine300", 0);
-        int countLiq500 = intent.getIntExtra("countWine500", 0);
-        int countWine300 = intent.getIntExtra("countLiq300", 0);
-        int countWine500 = intent.getIntExtra("countLiq500", 0);
+        int countBeer300 = intent.getIntExtra("counterBeer300", 0);
+        int countBeer500 = intent.getIntExtra("counterBeer500", 0);
+        int countLiq300 = intent.getIntExtra("counterWine300", 0);
+        int countLiq500 = intent.getIntExtra("counterWine500", 0);
+        int countWine300 = intent.getIntExtra("counterLiq300", 0);
+        int countWine500 = intent.getIntExtra("counterLiq500", 0);
 
 
         double alc = (alcBeer300*countBeer300 + alcBeer500*countBeer500 + alcWine300*countWine300 + alcWine500*countWine500 + alcLiq300*countLiq300 + alcLiq500*countLiq500);
