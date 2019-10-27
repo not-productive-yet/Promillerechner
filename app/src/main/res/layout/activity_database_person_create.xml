@@ -140,7 +140,7 @@
             android:id="@+id/buttonSavePerson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sichern"
+            android:text=""
             android:textColor="@color/colorWhite"
             android:layout_weight="1"
             android:background="@drawable/button_main"

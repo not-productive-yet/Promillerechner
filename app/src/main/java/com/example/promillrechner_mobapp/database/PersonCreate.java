@@ -51,6 +51,8 @@ public class PersonCreate extends AppCompatActivity {
         gender = findViewById(R.id.radioGroupEditGender);
         context = getApplicationContext();
 
+        buttonSavePerson.setText("Sichern");
+
         npSize.setMinValue(150);
         npSize.setMaxValue(210);
         npSize.setValue(180);

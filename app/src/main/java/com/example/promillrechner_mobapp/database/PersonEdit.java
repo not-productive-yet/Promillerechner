@@ -55,6 +55,8 @@ public class PersonEdit extends AppCompatActivity {
         gender = findViewById(R.id.radioGroupEditGender);
         context = getApplicationContext();
 
+        buttonSavePerson.setText("Aktualisieren");
+
         dao = Room.getDatabase(this).person_dao();
 
         i = getIntent();
