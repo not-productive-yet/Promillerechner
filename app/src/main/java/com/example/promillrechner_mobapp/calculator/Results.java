@@ -50,14 +50,15 @@ public class Results extends AppCompatActivity {
 
         textResultInfo.setText(setResultText(result));
 
-        buttonGoToShowDiagram.setOnClickListener(view -> handlerGoToDiagram());
+        buttonGoToShowDiagram.setOnClickListener(view -> handlerGoToDiagram(result));
         buttonGoBackToMain.setOnClickListener(view -> handlerGoToMain());
 
 
     }
 
-    private void handlerGoToDiagram() {
+    private void handlerGoToDiagram(double result) {
         Intent intent = new Intent(this, Diagram.class);
+        intent.putExtra("result", result);
         startActivity(intent);
 
         //Fade right
