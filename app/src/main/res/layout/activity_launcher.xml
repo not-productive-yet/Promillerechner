@@ -16,7 +16,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginTop="180dp"
-        android:text="Bitte beachten Sie, dass die Berechnungen nicht als Grundlage zur Feststellung der Fahrfähigkeit verwendet werden sollen."
+        android:text="@string/launcherText"
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
         android:textStyle="bold"

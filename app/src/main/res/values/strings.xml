@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Promillrechner</string>
+    <string name="app_name">Promillerechner</string>
     <string name="your_name">Your Name</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
@@ -13,4 +13,7 @@
     <string name="promilleText4">Rauschstadium. Sprach- und Gleichgewichtstörungen. Ich hoffe du hast ein Paar Freunde, die dich nach Hause bringen. </string>
     <string name="promilleText5">Betäubgunsstadium. Professionelle hilfe evtl gefragt. Reaktionen und Fähigkeit sich zu bewegen kaum vorhanden. Muskelschlaffungen auch möglich.</string>
     <string name="promilleText6">Lähmungsstadium. Der Sensenmann lässt grüßen.</string>
+
+    <string name="infotext"></string>
+    <string name="launcherText">Bitte beachten Sie, dass die Berechnungen nicht als Grundlage zur Feststellung der Fahrfähigkeit verwendet werden sollen.</string>
 </resources>

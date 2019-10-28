@@ -196,8 +196,6 @@ public class Alcohol extends AppCompatActivity {
         intent.putExtra("male", male);
         intent.putExtra("weight", weight);
 
-        Log.v("testinghere", (""+ weight));
-
         startActivity(intent);
 
         //Fade right
