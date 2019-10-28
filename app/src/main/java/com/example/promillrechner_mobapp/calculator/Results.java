@@ -100,6 +100,7 @@ public class Results extends AppCompatActivity {
         return Math.round(res*100)/100.0;
     }
 
+
     private String setResultText (double result) {
 
         if(result== 0)

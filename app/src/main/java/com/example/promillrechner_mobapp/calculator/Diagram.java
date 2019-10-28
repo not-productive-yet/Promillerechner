@@ -55,7 +55,10 @@ public class Diagram extends AppCompatActivity {
         graph.addSeries(series);
 
         infoText = findViewById(R.id.infoText);
-        infoText.setText("Du bist in " + Math.round(nüchternIn*100)/100.0 + " Stunden wieder nüchtern");
+        if(nüchternIn == 0.0)
+            infoText.setText("Das Diagramm bring dir jetzt auch nichts mehr.");
+        else
+            infoText.setText("Du bist in " + Math.round(nüchternIn*100)/100.0 + " Stunden wieder nüchtern");
 
 
 
