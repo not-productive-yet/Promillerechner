@@ -79,13 +79,22 @@ public class PersonEdit extends AppCompatActivity {
 
         buttonSavePerson.setOnClickListener(v -> {
 
-            String textToast = "Die Änderungen von "+ editName.getText().toString() +" wurden erfolgreich gespeichert";
+            if(editName.getText().toString().matches("")){
+                String textToast = "Bitte geben Sie einen Namen ein";
 
-            Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
-            toast.show();
+                Toast toast = Toast.makeText(context,textToast, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else {
 
-            saveWordOnClick();
-            finish();
+                String textToast = "Die Änderungen von " + editName.getText().toString() + " wurden erfolgreich aktualisiert";
+
+                Toast toast = Toast.makeText(context, textToast, Toast.LENGTH_SHORT);
+                toast.show();
+
+                saveWordOnClick();
+                finish();
+            }
         });
 
         buttonCancelPerson.setOnClickListener(v -> finish());}
