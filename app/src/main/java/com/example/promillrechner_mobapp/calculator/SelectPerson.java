@@ -80,7 +80,7 @@ public class SelectPerson extends AppCompatActivity {
 
     void handlerGoToAlcohol() {
         if(RecyclerViewAdapterListChoose.lastCheckedRB == null){
-            Toast toast = Toast.makeText(this, "Select a person", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Person auswählen!", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }

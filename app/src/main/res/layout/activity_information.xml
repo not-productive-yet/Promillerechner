@@ -33,12 +33,13 @@
                 android:text="Der Promillewert wird anhand des getrunkenen Alkohols und des Gewichtes berechnet. Abhängig von dem Geschlecht ist auch der Wassergehalt im Körper unterschiedlich. Männer enthalten 0,68% und Frauen 0.55%"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/promillewert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="Promillewert ="
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp"
@@ -56,36 +57,45 @@
                 />
 
             <TextView
-                android:id="@+id/liquid"
+                android:id="@+id/alkohol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Anteil der Körperflüssigkeit:"
+                android:text="Alkohol Prozentwerte:"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/weiblich"
+                android:id="@+id/textAlkoholBier"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Frauen: 55%"
+                android:text="Bier 3,9%"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/männlich"
+                android:id="@+id/textAlkoholWein"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Männer: 68%"
+                android:text="Wein 12,5%"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
+            <TextView
+                android:id="@+id/textAlkoholSchnaps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Longdrink 38,5%"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
             <TextView
                 android:id="@+id/ampel"
                 android:layout_width="wrap_content"
@@ -127,46 +137,6 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/alkohol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Alkohol Prozentwerte:"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textAlkoholBier"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:text="Bier 3,9%"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textAlkoholWein"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:text="Wein 12,5%"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textAlkoholSchnaps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:text="Schnaps 38,5%"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
             <TextView
                 android:id="@+id/diagramm"
                 android:layout_width="wrap_content"

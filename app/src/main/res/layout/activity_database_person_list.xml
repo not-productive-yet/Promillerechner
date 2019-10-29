@@ -6,12 +6,16 @@
     tools:context=".database.PersonList"
     android:background="@drawable/background_gradient_stars">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="650dp">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewPerson"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="197dp" />
+    </ScrollView>
 
     <Button
         android:id="@+id/backButtonList"

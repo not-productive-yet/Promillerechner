@@ -3,6 +3,7 @@ package com.example.promillrechner_mobapp.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,9 +49,10 @@ public class Results extends AppCompatActivity {
         Intent intent = getIntent();
 
         double result = calculatePromille(intent);
-        textPromille.setText(Double.toString(result));
+        textPromille.setText(result + "‰");
 
         textResultInfo.setText(setResultText(result));
+        textPromille.setTextColor(setTextColor(result));
 
         buttonGoToShowDiagram.setOnClickListener(view -> handlerGoToDiagram(result));
         buttonGoBackToMain.setOnClickListener(view -> handlerGoToMain());
@@ -117,6 +119,17 @@ public class Results extends AppCompatActivity {
             return getString(R.string.promilleText5);
         else
             return getString(R.string.promilleText6);
+    }
+
+    private int setTextColor (double result){
+
+        if(result<0.5)
+            return Color.GREEN;
+        else if(result>=0.5 && result<1.5)
+            return Color.YELLOW;
+        else
+            return Color.RED;
+
     }
 }
 

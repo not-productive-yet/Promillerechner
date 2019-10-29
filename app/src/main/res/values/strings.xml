@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">Promillerechner</string>
-    <string name="your_name">Your Name</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
+    <string name="your_name">Dein Name</string>
+    <string name="male">Männlich</string>
+    <string name="female">Weiblich</string>
     <string name="zurueck">Zurück</string>
     <string name="sichern">Sichern</string>
 
-    <string name="promilleText0">Die App war also eine Geldverschwendung. Deine Leber wird dir aber im Gegensatz zu deinem Geldbeutel dankbar sein.</string>
-    <string name="promilleText1">Deine Reaktionenszeit ist zusammen mit der Wahrscheinlichkeit neue Freunde zu finden erhöht. Falls du noch Fahranfänger bist solltest du kein Auto mehr fahren.</string>
-    <string name="promilleText2">Du siehst 15% schlechter und hören tust du auch nicht mehr so gut. Hol dir ein Taxi nach Hause und vergiss nicht dich bei den ganzen Menschen die du anrempeln wirst zu entschuldigen. </string>
+    <string name="promilleText0">Das alles einzugeben war also eine Zeitverschwendung. Deine Leber wird dir aber bestimmt dankbar sein.</string>
+    <string name="promilleText1">Deine Reaktionenszeit ist zusammen mit der Wahrscheinlichkeit neue Freunde zu finden erhöht. Falls du noch Fahranfänger bist, solltest du kein Auto mehr fahren.</string>
+    <string name="promilleText2">Du siehst 15% schlechter und hörst auch nicht mehr so gut. Hol dir lieber ein Taxi nach Hause und vergiss nicht dich bei den ganzen Menschen die du anrempeln wirst zu entschuldigen. </string>
     <string name="promilleText3">Konzentrationschwäche, Tunnelblick, Euphorie. Würde Whatsapp lieber sein lassen.</string>
-    <string name="promilleText4">Rauschstadium. Sprach- und Gleichgewichtstörungen. Ich hoffe du hast ein Paar Freunde, die dich nach Hause bringen. </string>
-    <string name="promilleText5">Betäubgunsstadium. Professionelle hilfe evtl gefragt. Reaktionen und Fähigkeit sich zu bewegen kaum vorhanden. Muskelschlaffungen auch möglich.</string>
-    <string name="promilleText6">Lähmungsstadium. Der Sensenmann lässt grüßen.</string>
+    <string name="promilleText4">Rauschstadium. Sprach- und Gleichgewichtstörungen. Ich hoffe du hast ein Paar Freunde, die dich nach Hause bringen, mit dem Fahrrad wirds nämlich auch nichts mehr. </string>
+    <string name="promilleText5">Betäubgunsstadium. Deine Freunde sollten eventuell professionelle Hilfe rufen.</string>
+    <string name="promilleText6">Lähmungsstadium. Krankenhaus lässt grüßen.</string>
 
     <string name="infotext"></string>
-    <string name="launcherText">Bitte beachten Sie, dass die Berechnungen nicht als Grundlage zur Feststellung der Fahrfähigkeit verwendet werden sollen.</string>
+    <string name="launcherText">Bitte beachten Sie, dass die Berechnungen nicht als Grundlage zur eindeutigen Feststellung der Fahrfähigkeit verwendet werden sollen.</string>
 </resources>

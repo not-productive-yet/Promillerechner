@@ -16,7 +16,7 @@
         android:padding="20dp"
         android:textSize="22sp"
         android:background="@drawable/button_main"
-        android:text="Calculator"
+        android:text="rechner"
         android:textColor="@color/colorWhite" />
 
     <Button
@@ -29,7 +29,7 @@
         android:padding="20dp"
         android:textSize="22sp"
         android:background="@drawable/button_main"
-        android:text="Person Database"
+        android:text="Personen"
         android:textColor="@color/colorWhite" />
 
     <Button
