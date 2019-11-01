@@ -92,10 +92,10 @@ public class Results extends AppCompatActivity {
         double liquid;
 
         if(male){
-            liquid = 0.68;
+            liquid = 0.7;
         }
         else
-            liquid = 0.55;
+            liquid = 0.6;
         double res = (alc/(weight*liquid));
 
         //rundet auf 2 nachkommastellen

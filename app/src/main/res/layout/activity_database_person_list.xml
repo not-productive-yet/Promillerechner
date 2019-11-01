@@ -6,9 +6,22 @@
     tools:context=".database.PersonList"
     android:background="@drawable/background_gradient_stars">
 
+    <TextView
+        android:id="@+id/personTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personen"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="35dp"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="650dp">
+        android:layout_height="650dp"
+        android:layout_below="@+id/personTitle"
+        android:layout_marginTop="30dp">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewPerson"
         android:layout_width="match_parent"

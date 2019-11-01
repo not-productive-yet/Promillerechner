@@ -53,6 +53,10 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         TextView textName = holder.itemView.findViewById(R.id.textName);
         textName.setText(persons.get(position).getName());
 
+        //TextView textWeight = holder.itemView.findViewById(R.id.textWeight);
+        //textWeight.setText(persons.get(position).getWeight());
+
+
     }
 
     @Override
@@ -63,6 +67,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textName;
+        //TextView textWeight;
         RelativeLayout parentLayout;
 
 
@@ -70,21 +75,16 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
             super(itemView);
 
             textName = itemView.findViewById(R.id.textName1);
+            //textWeight = itemView.findViewById(R.id.textWeight);
             parentLayout = itemView.findViewById(R.id.parentLayoutListDatabase);
             delete = itemView.findViewById(R.id.item_delete);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onItemClick(persons.get(getAdapterPosition()));
-                }
-            });
-            delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onDeleteClick(persons.get(getAdapterPosition()));
-                }
-            });
+            itemView.setOnClickListener(view ->
+                    listener.onItemClick(persons.get(getAdapterPosition())));
+
+            delete.setOnClickListener(v ->
+                    listener.onDeleteClick(persons.get(getAdapterPosition())));
+
         }
     }
     public void setPersons(List<Person> persons){

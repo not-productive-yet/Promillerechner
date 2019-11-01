@@ -90,8 +90,6 @@ public class SelectPerson extends AppCompatActivity {
         boolean male = RecyclerViewAdapterListChoose.male;
 
 
-        Log.v("testinghere", (""+ weight));
-
 
         intent.putExtra("weight", weight);
         intent.putExtra("male", male);

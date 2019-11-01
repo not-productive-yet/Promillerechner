@@ -24,6 +24,7 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
     private List<Person> persons = Collections.emptyList();
 
     public static RadioButton lastCheckedRB = null;
+    public static RadioButton current = null;
     public static double weight = 0.0;
     public static boolean male = true;
 
@@ -51,7 +52,7 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
 
         textName.setOnClickListener(v -> {
 
-            RadioButton current = (RadioButton) v;
+            current = (RadioButton) v;
             if(lastCheckedRB != null){
                 lastCheckedRB.setChecked(false);
             }

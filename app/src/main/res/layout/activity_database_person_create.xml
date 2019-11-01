@@ -18,8 +18,8 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="50dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorLightGray" />
 
@@ -89,7 +89,7 @@
         android:layout_below="@id/Size"
         android:background="@drawable/pink_outline"
         android:orientation="horizontal"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp">
         <RadioButton
@@ -123,28 +123,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@+id/radioGroupEditGender"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
         <Button
             android:id="@+id/buttonCancelPerson"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="@string/zurueck"
-            android:textColor="@color/colorWhite"
-            android:layout_weight="1"
-            android:background="@drawable/button_main"
+            android:background="@drawable/button_layout"
             android:layout_margin="2dp"
+            android:layout_gravity="center"
             />
 
         <Button
             android:id="@+id/buttonSavePerson"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/colorWhite"
-            android:layout_weight="1"
-            android:background="@drawable/button_main"
+            android:background="@drawable/button_layout"
             android:layout_margin="2dp"
+            android:layout_gravity="center"
             />
     </LinearLayout>
 

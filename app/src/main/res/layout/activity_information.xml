@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Der Promillewert wird anhand des getrunkenen Alkohols und des Gewichtes berechnet. Abhängig von dem Geschlecht ist auch der Wassergehalt im Körper unterschiedlich. Männer enthalten 0,68% und Frauen 0.55%"
+                android:text="Der Promillewert wird anhand des getrunkenen Alkohols, des Gewichtes und des Geschlechtes berechnet. Der Wassergehalt im Körper ist je nach Geschlecht unterschiedlich. Männer enthalten im Durchschnitt 70% und Frauen 60% Körperflüssigkeit."
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Bier 3,9%"
+                android:text="Bier 5%"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Wein 12,5%"
+                android:text="Wein 11%"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Longdrink 38,5%"
+                android:text="Longdrink 38%"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
             <TextView
