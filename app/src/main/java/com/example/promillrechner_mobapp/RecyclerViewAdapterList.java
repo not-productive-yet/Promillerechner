@@ -53,8 +53,11 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         TextView textName = holder.itemView.findViewById(R.id.textName);
         textName.setText(persons.get(position).getName());
 
-        //TextView textWeight = holder.itemView.findViewById(R.id.textWeight);
-        //textWeight.setText(persons.get(position).getWeight());
+        TextView textWeight = holder.itemView.findViewById(R.id.textWeight);
+        textWeight.setText(Integer.toString(persons.get(position).getWeight()) + "kg");
+
+        TextView textSize = holder.itemView.findViewById(R.id.textHeight);
+        textSize.setText(Integer.toString(persons.get(position).getSize()) + "cm");
 
 
     }
@@ -67,7 +70,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textName;
-        //TextView textWeight;
+        TextView textWeight;
         RelativeLayout parentLayout;
 
 
@@ -75,7 +78,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
             super(itemView);
 
             textName = itemView.findViewById(R.id.textName1);
-            //textWeight = itemView.findViewById(R.id.textWeight);
+            textWeight = itemView.findViewById(R.id.textWeight);
             parentLayout = itemView.findViewById(R.id.parentLayoutListDatabase);
             delete = itemView.findViewById(R.id.item_delete);
 

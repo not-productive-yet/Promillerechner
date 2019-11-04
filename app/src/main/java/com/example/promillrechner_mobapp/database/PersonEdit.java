@@ -33,8 +33,8 @@ public class PersonEdit extends AppCompatActivity {
     NumberPicker npSize = null;
     NumberPicker npWeight = null;
     EditText editName = null;
-    RadioButton radioButton = null;
-    RadioGroup gender= null;
+    RadioButton male = null;
+    RadioButton female= null;
     Intent i;
     String name;
     Context context;
@@ -52,7 +52,8 @@ public class PersonEdit extends AppCompatActivity {
         npSize = findViewById(R.id.numberPickerSize);
         npWeight = findViewById(R.id.numberPickerGewicht);
         editName = findViewById(R.id.editName);
-        gender = findViewById(R.id.radioGroupEditGender);
+        male = findViewById(R.id.radioButtonMale);
+        female = findViewById(R.id.radioButtonFemale);
         context = getApplicationContext();
 
         buttonSavePerson.setText("Aktualisieren");
@@ -72,10 +73,13 @@ public class PersonEdit extends AppCompatActivity {
         npWeight.setMinValue(45);
         npWeight.setMaxValue(120);
         npWeight.setValue(person.getWeight());
-        //if (person.isMale())
-        //    radioButton.setChecked(true);
-        //else
-        //    radioButton.setChecked(true);
+
+        if(person.isMale()){
+            male.setSelected(true);
+        }
+        else{
+            female.setSelected(true);
+        }
 
         buttonSavePerson.setOnClickListener(v -> {
 
@@ -117,7 +121,7 @@ public class PersonEdit extends AppCompatActivity {
         person.setName(editName.getText().toString());
         person.setSize(npSize.getValue());
         person.setWeight(npWeight.getValue());
-        person.setMale(false);
+        person.setMale(male.isSelected());
 
         new SpeichernTask().execute(person);
     }

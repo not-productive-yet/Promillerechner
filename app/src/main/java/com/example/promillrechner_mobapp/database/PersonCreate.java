@@ -109,9 +109,8 @@ public class PersonCreate extends AppCompatActivity {
     }
 
     private void saveWordOnClick(){
-        int selectedId = gender.getCheckedRadioButtonId();
-        radioButton = findViewById(selectedId);
-        new SpeichernTask().execute(new Person(editName.getText().toString(), npWeight.getValue(), npSize.getValue(), false));
+        radioButton = findViewById(R.id.radioButtonMale);
+        new SpeichernTask().execute(new Person(editName.getText().toString(), npWeight.getValue(), npSize.getValue(), radioButton.isSelected()));
     }
 
 }
