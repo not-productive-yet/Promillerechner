@@ -13,34 +13,35 @@
         android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/name"
         android:textSize="20sp"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         />
     <TextView
         android:id="@+id/textWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="60 kg"
+        android:text="@string/_60_kg"
         android:textSize="17sp"
         android:textColor="@color/colorWhite"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_below="@+id/textName"
         />
     <TextView
         android:id="@+id/textHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1.70 m"
+        android:text="@string/_1_70_m"
         android:textSize="17sp"
         android:textColor="@color/colorWhite"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
         android:layout_below="@+id/textName"
         />
 
    <ImageView
+       android:contentDescription="@string/bin"
        android:id="@+id/item_delete"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"

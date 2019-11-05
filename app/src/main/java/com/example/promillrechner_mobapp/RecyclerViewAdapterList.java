@@ -1,6 +1,8 @@
 package com.example.promillrechner_mobapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.promillrechner_mobapp.databaseService.Person;
@@ -54,10 +57,10 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         textName.setText(persons.get(position).getName());
 
         TextView textWeight = holder.itemView.findViewById(R.id.textWeight);
-        textWeight.setText(Integer.toString(persons.get(position).getWeight()) + "kg");
+        textWeight.setText(persons.get(position).getWeight() + " kg");
 
         TextView textSize = holder.itemView.findViewById(R.id.textHeight);
-        textSize.setText(Integer.toString(persons.get(position).getSize()) + "cm");
+        textSize.setText(persons.get(position).getSize() + " cm");
 
 
     }
@@ -77,7 +80,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         public ViewHolder(@NonNull final View itemView, final OnItemClickListener listener) {
             super(itemView);
 
-            textName = itemView.findViewById(R.id.textName1);
+            textName = itemView.findViewById(R.id.textName);
             textWeight = itemView.findViewById(R.id.textWeight);
             parentLayout = itemView.findViewById(R.id.parentLayoutListDatabase);
             delete = itemView.findViewById(R.id.item_delete);
@@ -85,8 +88,15 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
             itemView.setOnClickListener(view ->
                     listener.onItemClick(persons.get(getAdapterPosition())));
 
-            delete.setOnClickListener(v ->
-                    listener.onDeleteClick(persons.get(getAdapterPosition())));
+            delete.setOnClickListener(v -> {
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(mContext);
+                dialogBuilder.setMessage("Willst du "+textName.getText().toString()+" wirklich löschen?")
+                            .setPositiveButton("Ja", (dialog, which) -> listener.onDeleteClick(persons.get(getAdapterPosition())))
+                            .setNegativeButton("Abbrechen", (dialog, which) -> dialog.dismiss());
+
+                AlertDialog dialog = dialogBuilder.create();
+                dialog.show();
+            });
 
         }
     }
@@ -95,5 +105,18 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         notifyDataSetChanged();
     }
 
+    class DeleteAlcoholTask extends AsyncTask<Person, Void, List<Person>> {
+
+        @Override
+        protected List<Person> doInBackground(Person... People) {
+            dao.delete(People[0]);
+            return dao.getAll();
+        }
+        @Override
+        protected void onPostExecute(List<Person> People){
+            super.onPostExecute(People);
+            setPersons(People);
+        }
+    }
 
 }

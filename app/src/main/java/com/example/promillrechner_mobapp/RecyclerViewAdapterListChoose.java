@@ -90,18 +90,4 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
         notifyDataSetChanged();
     }
 
-    class DeleteAlcoholTask extends AsyncTask<Person, Void, List<Person>> {
-
-        @Override
-        protected List<Person> doInBackground(Person... People) {
-                dao.delete(People[0]);
-                return dao.getAll();
-            }
-        @Override
-        protected void onPostExecute(List<Person> People){
-            super.onPostExecute(People);
-            setPersons(People);
-        }
-        }
-
     }

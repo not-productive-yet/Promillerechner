@@ -54,6 +54,13 @@ public class Diagram extends AppCompatActivity {
         series.setColor(Color.MAGENTA);
         graph.addSeries(series);
 
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(result+1);
+        graph.getViewport().setMinX(0);
+        graph.getViewport().setMaxX(Math.round(nüchternIn*100)/100.0+1);
+        graph.getViewport().setYAxisBoundsManual(true);
+        graph.getViewport().setXAxisBoundsManual(true);
+
         infoText = findViewById(R.id.infoText);
         if(nüchternIn == 0.0)
             infoText.setText("Das Diagramm bring dir jetzt auch nichts mehr.");

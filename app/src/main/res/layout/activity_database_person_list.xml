@@ -10,11 +10,11 @@
         android:id="@+id/personTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personen"
+        android:text="@string/personen"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textAlignment="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="35dp"/>
 
     <ScrollView
@@ -25,7 +25,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewPerson"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="197dp" />
     </ScrollView>
@@ -34,7 +34,7 @@
         android:id="@+id/backButtonList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zurück"
+        android:text="@string/zurueck"
         android:textAllCaps="true"
         android:layout_alignParentBottom="true"
         android:textSize="20sp"

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,10 +11,10 @@
         android:id="@+id/diagramTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alkoholabbau"
+        android:text="@string/alkoholabbau"
         android:textAllCaps="true"
         android:textColor="@color/colorWhite"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="35dp"
         android:gravity="center"
         />
@@ -32,11 +31,11 @@
         android:id="@+id/infoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="wannNüchtern"
+        android:text="@string/wann_nuechtern"
         android:textAllCaps="true"
         android:textColor="@color/colorWhite"
         android:layout_below="@+id/graph"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginTop="15dp"
         android:gravity="center"
         />
@@ -45,13 +44,13 @@
         android:id="@+id/buttonGoBackToMain"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Zurück zum Start"
+        android:text="@string/zurueck_zum_start"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_main"
         android:padding="10dp"
         android:textColor="@color/colorWhite"
         android:layout_centerInParent="true"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/infoText"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"/>
 
 </RelativeLayout>
