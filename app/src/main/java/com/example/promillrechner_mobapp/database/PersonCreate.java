@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
@@ -31,8 +32,9 @@ public class PersonCreate extends AppCompatActivity {
     NumberPicker npSize = null;
     NumberPicker npWeight = null;
     EditText editName = null;
-    RadioButton radioButton = null;
-    RadioGroup gender= null;
+    RadioButton male = null;
+    RadioButton female = null;
+    boolean genderMale = true;
     PersonDao dao = null;
     Context context = null;
 
@@ -49,7 +51,8 @@ public class PersonCreate extends AppCompatActivity {
         npSize = findViewById(R.id.numberPickerSize);
         npWeight = findViewById(R.id.numberPickerGewicht);
         editName = findViewById(R.id.editName);
-        gender = findViewById(R.id.radioGroupEditGender);
+        male = findViewById(R.id.radioButtonMale);
+        female = findViewById(R.id.radioButtonFemale);
         context = getApplicationContext();
 
         buttonSavePerson.setText("Sichern");
@@ -61,6 +64,19 @@ public class PersonCreate extends AppCompatActivity {
         npWeight.setMinValue(45);
         npWeight.setMaxValue(120);
         npWeight.setValue(80);
+
+        male.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (male.isChecked()) {
+                genderMale = true;
+            }
+        });
+
+        female.setOnCheckedChangeListener((buttonView, isChecked) -> {
+
+            if(female.isChecked()) {
+                genderMale = false;
+            }
+        });
 
         buttonSavePerson.setOnClickListener(v -> {
 
@@ -86,8 +102,6 @@ public class PersonCreate extends AppCompatActivity {
 
     private void handlerGoToChooseAlcohol() {
         Intent intent = new Intent(this, SelectPerson.class);
-        /*intent.putExtra("weight", npWeight.getValue());
-        intent.putExtra("male", gender.getCheckedRadioButtonId());*/
         startActivity(intent);
 
         //Fade right
@@ -109,8 +123,7 @@ public class PersonCreate extends AppCompatActivity {
     }
 
     private void saveWordOnClick(){
-        radioButton = findViewById(R.id.radioButtonMale);
-        new SpeichernTask().execute(new Person(editName.getText().toString(), npWeight.getValue(), npSize.getValue(), radioButton.isSelected()));
+        new SpeichernTask().execute(new Person(editName.getText().toString(), npWeight.getValue(), npSize.getValue(), genderMale));
     }
 
 }

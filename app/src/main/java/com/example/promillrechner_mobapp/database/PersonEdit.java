@@ -75,10 +75,10 @@ public class PersonEdit extends AppCompatActivity {
         npWeight.setValue(person.getWeight());
 
         if(person.isMale()){
-            male.setSelected(true);
+            male.setChecked(true);
         }
         else{
-            female.setSelected(true);
+            female.setChecked(true);
         }
 
         buttonSavePerson.setOnClickListener(v -> {
@@ -121,7 +121,7 @@ public class PersonEdit extends AppCompatActivity {
         person.setName(editName.getText().toString());
         person.setSize(npSize.getValue());
         person.setWeight(npWeight.getValue());
-        person.setMale(male.isSelected());
+        person.setMale(male.isChecked());
 
         new SpeichernTask().execute(person);
     }

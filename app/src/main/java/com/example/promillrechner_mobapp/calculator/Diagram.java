@@ -55,9 +55,9 @@ public class Diagram extends AppCompatActivity {
         graph.addSeries(series);
 
         graph.getViewport().setMinY(0);
-        graph.getViewport().setMaxY(result+1);
+        graph.getViewport().setMaxY(result*1.1);
         graph.getViewport().setMinX(0);
-        graph.getViewport().setMaxX(Math.round(nüchternIn*100)/100.0+1);
+        graph.getViewport().setMaxX((Math.round(nüchternIn*100)/100.0)*1.1);
         graph.getViewport().setYAxisBoundsManual(true);
         graph.getViewport().setXAxisBoundsManual(true);
 

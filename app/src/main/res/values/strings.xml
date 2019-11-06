@@ -35,8 +35,8 @@
     <string name="beispielText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</string>
     <string name="diagramm_anzeigen">Diagramm anzeigen</string>
     <string name="PromilleWert">1.5</string>
-    <string name="gewicht_in_kg">Gewicht n\in kg</string>
-    <string name="groeße_in_cm">Größe n\in cm</string>
+    <string name="gewicht_in_kg">Gewicht \nin kg</string>
+    <string name="groeße_in_cm">Größe \nin cm</string>
     <string name="Info_Erklaerung">Der Promillewert wird anhand des getrunkenen Alkohols, des Gewichtes und des Geschlechtes berechnet. Der Wassergehalt im Körper ist je nach Geschlecht unterschiedlich. Männer enthalten im Durchschnitt 70% und Frauen 60% Körperflüssigkeit.</string>
     <string name="promillewert_Ueberschrift">Promillewert =</string>
     <string name="Formel">getrunkener Alkohol (g) /(Gewicht)*(Anteil Körperflüßigkeit)</string>
