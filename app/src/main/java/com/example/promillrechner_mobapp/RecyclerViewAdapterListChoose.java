@@ -53,7 +53,7 @@ public class RecyclerViewAdapterListChoose extends RecyclerView.Adapter<Recycler
         textName.setOnClickListener(v -> {
 
             current = (RadioButton) v;
-            if(lastCheckedRB != null){
+            if(lastCheckedRB != null && current !=lastCheckedRB){
                 lastCheckedRB.setChecked(false);
             }
             lastCheckedRB = current;

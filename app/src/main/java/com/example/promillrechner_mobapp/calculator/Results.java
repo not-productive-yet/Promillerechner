@@ -25,6 +25,7 @@ public class Results extends AppCompatActivity {
     Button buttonGoBackToMain;
     TextView textPromille;
     TextView textResultInfo;
+    TextView textEingabeWerte;
 
     //alkoholgehalt in gramm
     double alcBeer300 = 12;
@@ -45,14 +46,18 @@ public class Results extends AppCompatActivity {
         buttonGoBackToMain = findViewById(R.id.buttonGoBackToMain);
         textPromille = findViewById(R.id.textResultPromille);
         textResultInfo = findViewById(R.id.textResultInfo);
+        textEingabeWerte = findViewById(R.id.textEingabeWerte);
 
         Intent intent = getIntent();
 
         double result = calculatePromille(intent);
         textPromille.setText(result + "‰");
 
+        textEingabeWerte.setText(showEingabeWerte(intent));
         textResultInfo.setText(setResultText(result));
         textPromille.setTextColor(setTextColor(result));
+
+
 
         buttonGoToShowDiagram.setOnClickListener(view -> handlerGoToDiagram(result));
         buttonGoBackToMain.setOnClickListener(view -> handlerGoToMain());
@@ -129,6 +134,39 @@ public class Results extends AppCompatActivity {
             return Color.YELLOW;
         else
             return Color.RED;
+
+    }
+
+    private String showEingabeWerte (Intent intent) {
+
+        String eingabeWerte = RecyclerViewAdapterListChoose.current.getText().toString() + ": ";
+
+        int countBeer300 = intent.getIntExtra("counterBeer300", 0);
+        int countBeer500 = intent.getIntExtra("counterBeer500", 0);
+        int countLiq300 = intent.getIntExtra("counterWine300", 0);
+        int countLiq500 = intent.getIntExtra("counterWine500", 0);
+        int countWine300 = intent.getIntExtra("counterLiq300", 0);
+        int countWine500 = intent.getIntExtra("counterLiq500", 0);
+
+        if(countBeer300 != 0)
+            eingabeWerte = eingabeWerte + " " + countBeer300 + "x 300ml Bier";
+
+        if(countBeer500 != 0)
+            eingabeWerte = eingabeWerte + " " + countBeer500 + "x 500ml Bier";
+
+        if(countLiq300 != 0)
+            eingabeWerte = eingabeWerte + " " + countLiq300 +  "x 300ml Longdrink";
+
+        if(countLiq500 != 0)
+            eingabeWerte = eingabeWerte + " " + countLiq500 + "x 500ml Longdrink";
+
+        if(countWine300 != 0)
+            eingabeWerte = eingabeWerte + " " + countWine300 + "x 300ml Wein";
+
+        if(countWine500 != 0)
+            eingabeWerte = eingabeWerte + " " + countWine500 + "x 500ml Wein";
+
+        return eingabeWerte;
 
     }
 }
