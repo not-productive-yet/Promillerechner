@@ -8,10 +8,22 @@
     android:scrollbarAlwaysDrawVerticalTrack="true"
     >
 
+    <TextView
+        android:id="@+id/informationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/information"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="500dp"
+        android:layout_below="@id/informationTitle">
 
         <LinearLayout
             android:id="@+id/layoutInfo"
@@ -166,7 +178,6 @@
         android:text="@string/zurueck"
         android:textAllCaps="true"
         android:layout_alignParentBottom="true"
-        android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:background="@drawable/button_layout"
