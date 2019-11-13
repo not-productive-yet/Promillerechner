@@ -21,6 +21,7 @@ public class PersonList extends AppCompatActivity {
 
 
     private Button buttonBack;
+    private Button buttonGoToCreate;
     private PersonDao dao;
     private RecyclerView recyclerView;
     private RecyclerViewAdapterList adapter;
@@ -31,6 +32,7 @@ public class PersonList extends AppCompatActivity {
         setContentView(R.layout.activity_database_person_list);
 
         buttonBack = findViewById(R.id.backButtonList);
+        buttonGoToCreate = findViewById(R.id.buttonGoToCreate);
         dao = Room.getDatabase(this).person_dao();
 
         recyclerView = findViewById(R.id.recyclerviewPerson);
@@ -56,6 +58,11 @@ public class PersonList extends AppCompatActivity {
         });
 
         buttonBack.setOnClickListener(v -> finish());
+
+        buttonGoToCreate.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PersonCreate.class);
+            startActivity(intent);
+        });
 
     }
 

@@ -17,6 +17,17 @@
         android:textSize="70sp" />
 
     <TextView
+        android:id="@+id/textEingabeWerte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="eingabe"
+        android:layout_below="@id/textResultPromille"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:textSize="6pt"/>
+
+    <TextView
         android:id="@+id/textResultInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +39,7 @@
         android:padding="20dp"
         android:textAllCaps="true"
         android:layout_centerInParent="true"
-        android:layout_below="@id/textResultPromille"/>
+        android:layout_below="@id/textEingabeWerte"/>
 
 <LinearLayout
     android:layout_width="wrap_content"

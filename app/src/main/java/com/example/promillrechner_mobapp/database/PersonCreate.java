@@ -93,19 +93,11 @@ public class PersonCreate extends AppCompatActivity {
                 toast.show();
 
                 saveWordOnClick();
-                handlerGoToChooseAlcohol();
+                finish();
             }
         });
 
         buttonCancelPerson.setOnClickListener(v -> finish());
-    }
-
-    private void handlerGoToChooseAlcohol() {
-        Intent intent = new Intent(this, SelectPerson.class);
-        startActivity(intent);
-
-        //Fade right
-        overridePendingTransition(R.xml.enter, R.xml.exit);
     }
 
     class SpeichernTask extends AsyncTask<Person, Void , Void> {
