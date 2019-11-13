@@ -37,22 +37,25 @@
     <string name="PromilleWert">1.5</string>
     <string name="gewicht_in_kg">Gewicht \nin kg</string>
     <string name="groeße_in_cm">Größe \nin cm</string>
-    <string name="Info_Erklaerung">Der Promillewert wird anhand des getrunkenen Alkohols, des Gewichtes und des Geschlechtes berechnet. Der Wassergehalt im Körper ist je nach Geschlecht unterschiedlich. Männer enthalten im Durchschnitt 70% und Frauen 60% Körperflüssigkeit.</string>
-    <string name="promillewert_Ueberschrift">Promillewert =</string>
+    <string name="Info_Erklaerung">Der Promillewert wird anhand folgender Formel berechnet: </string>
+    <string name="körperflüssigkeit">Die Körperflüssigkeit ist bei Frauen: 60% und Männer: 70%.</string>
     <string name="Formel">getrunkener Alkohol (g) /(Gewicht)*(Anteil Körperflüßigkeit)</string>
-    <string name="alkohol_prozentwerte_Ueberschrift">Alkohol Prozentwerte:</string>
-    <string name="wein_prozent">Wein 11%</string>
-    <string name="longdrink_prozent">Longdrink 38%</string>
-    <string name="bier_prozent">Bier 5%</string>
+    <string name="alkohol_prozentwerte_Ueberschrift">Alkohol:</string>
+    <string name="wein_prozent">Wein: 11%</string>
+    <string name="longdrink_prozent">Longdrink: 38%</string>
+    <string name="bier_prozent">Bier: 5%</string>
     <string name="ergebnis_Ueberschrift">Ergebnis:</string>
-    <string name="promillewert_gruen"><![CDATA[Grün: Promillewert < 0,5‰]]></string>
-    <string name="promillewert_gelb"><![CDATA[Gelb: 0,5‰ <= Promillewert < 1,5‰]]></string>
-    <string name="promillewert_rot"><![CDATA[Rot: Promillewert > 1,5‰]]></string>
+    <string name="promillewert_gruen"><![CDATA[Grün: < 0,5‰]]></string>
+    <string name="promillewert_gelb"><![CDATA[Gelb: 0,5‰ - 1,5‰]]></string>
+    <string name="promillewert_rot"><![CDATA[Rot: > 1,5‰]]></string>
     <string name="diagramm_Ueberschrift">Diagramm:</string>
-    <string name="ausnuechtern_text">Der Mensch baut im Durchschnitt 0,1‰ pro Stunde ab. Diesen Abbau zeigt das Diagramm bis zur vollständigen Ausnüchterung an.</string>
+    <string name="ausnuechtern_text">Im Durchschnitt werden 0,1‰ pro Stunde abgebaut. Das Diagramm zeigt den sinkenden Promillewert bis zur vollständigen Ausnüchterung an.</string>
     <string name="einverstaendnis">Hab\'s verstanden!</string>
     <string name="rechner">rechner</string>
     <string name="personen">Personen</string>
     <string name="information">Information</string>
     <string name="bin">bin</string>
+    <string name="textAlkoholInfo">Ein 300 ml Bier mit 5% Alkoholgehalt erhält beispielsweise 12g Alkohol. Aufgrund der unterschiedlichen Alkoholsorten werden für die Berechnung Durchschnittwswerte verwendet.</string>
+    <string name="person_formel">Gewicht und Körperflüssigkeit:</string>
+    <string name="textPersonInfo">Je mehr Körpermasse und Körperflüssigkeit vorhanden ist desto höher ist die Alkoholvertäglichkeit. Frauen haben im Durhschnitt 60% und Männer 70% Wassergehalt.</string>
 </resources>

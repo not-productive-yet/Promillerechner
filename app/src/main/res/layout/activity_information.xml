@@ -46,38 +46,47 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/promillewert"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/promillewert_Ueberschrift"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
+
+            <ImageView
                 android:id="@+id/ergebnisFormel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/Formel"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp"
+                android:background="@drawable/formel"
+                android:padding="30dp"
                 />
 
+            <TextView
+                android:id="@+id/zeit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="(Der Zeitfaktor wird nicht beachtet.)"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                />
             <TextView
                 android:id="@+id/alkohol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:text="@string/alkohol_prozentwerte_Ueberschrift"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAlkoholInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/textAlkoholInfo"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textAlkoholBier"
@@ -108,16 +117,59 @@
                 android:text="@string/longdrink_prozent"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp" />
+
             <TextView
-                android:id="@+id/ampel"
+                android:id="@+id/person"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/ergebnis_Ueberschrift"
+                android:layout_marginTop="25dp"
+                android:text="@string/person_formel"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textpersonInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/textPersonInfo"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/strich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="______________________________________"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ergebnisInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Das Ergebnis wird folgendermaßen interpretiert: "
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                 />
+
+            <TextView
+                android:id="@+id/promillewert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:text="Promillewert"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
 
             <TextView
                 android:id="@+id/grün"
@@ -127,7 +179,8 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/promillewert_gruen"
                 android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
 
             <TextView
                 android:id="@+id/gelb"
@@ -154,12 +207,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/diagramm_Ueberschrift"
+                android:layout_marginTop="25dp"
+                android:text="Diagramm"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
                 android:textSize="20sp" />
-            <TextView
+                        <TextView
                 android:id="@+id/graphbeschreibung"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
