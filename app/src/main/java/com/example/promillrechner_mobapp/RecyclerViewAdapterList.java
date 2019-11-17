@@ -1,7 +1,6 @@
 package com.example.promillrechner_mobapp;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +61,9 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         TextView textSize = holder.itemView.findViewById(R.id.textHeight);
         textSize.setText(persons.get(position).getSize() + " cm");
 
+        TextView textDate = holder.itemView.findViewById(R.id.textDate);
+        textDate.setText("erstellt: " + persons.get(position).getDate());
+
 
     }
 
@@ -75,6 +77,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
         TextView textName;
         TextView textWeight;
         RelativeLayout parentLayout;
+        TextView textDate;
 
 
         public ViewHolder(@NonNull final View itemView, final OnItemClickListener listener) {
@@ -82,6 +85,7 @@ public class RecyclerViewAdapterList extends RecyclerView.Adapter<RecyclerViewAd
 
             textName = itemView.findViewById(R.id.textName);
             textWeight = itemView.findViewById(R.id.textWeight);
+            textDate = itemView.findViewById(R.id.textDate);
             parentLayout = itemView.findViewById(R.id.parentLayoutListDatabase);
             delete = itemView.findViewById(R.id.item_delete);
 

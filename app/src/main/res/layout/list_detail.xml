@@ -40,6 +40,18 @@
         android:layout_below="@+id/textName"
         />
 
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/letzte_aenderung_"
+        android:textSize="15sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginStart="150dp"
+        android:layout_below="@+id/textName"
+        android:padding="1dp"
+        />
+
    <ImageView
        android:contentDescription="@string/bin"
        android:id="@+id/item_delete"

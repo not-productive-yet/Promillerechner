@@ -15,7 +15,7 @@ public abstract class Room extends RoomDatabase {
     public static Room getDatabase(Context context){
         if(INSTANCE == null){
             INSTANCE = androidx.room.Room.databaseBuilder(context.getApplicationContext(),
-                    Room.class, "alcohol_database")
+                    Room.class, "promille_database")
                     .build();
         }
         return INSTANCE;
