@@ -9,9 +9,9 @@
     <string name="promilleText0">Das alles einzugeben war also eine Zeitverschwendung. Deine Leber wird dir aber bestimmt dankbar sein.</string>
     <string name="promilleText1">Deine Reaktionenszeit ist zusammen mit der Wahrscheinlichkeit neue Freunde zu finden erhöht. Falls du noch Fahranfänger bist, solltest du kein Auto mehr fahren.</string>
     <string name="promilleText2">Du siehst 15% schlechter und hörst auch nicht mehr so gut. Hol dir lieber ein Taxi nach Hause und vergiss nicht dich bei den ganzen Menschen die du anrempeln wirst zu entschuldigen. </string>
-    <string name="promilleText3">Konzentrationschwäche, Tunnelblick, Euphorie. Würde Whatsapp lieber sein lassen.</string>
-    <string name="promilleText4">Rauschstadium. Sprach- und Gleichgewichtstörungen. Ich hoffe du hast ein Paar Freunde, die dich nach Hause bringen, mit dem Fahrrad wirds nämlich auch nichts mehr. </string>
-    <string name="promilleText5">Betäubgunsstadium. Deine Freunde sollten eventuell professionelle Hilfe rufen.</string>
+    <string name="promilleText3">Konzentrationsschwäche, Tunnelblick, Euphorie. Würde Whatsapp lieber sein lassen.</string>
+    <string name="promilleText4">Rauschstadium. Sprach- und Gleichgewichtstörungen. Ich hoffe du hast ein paar Freunde, die dich nach Hause bringen, mit dem Fahrrad wirds nämlich auch nichts mehr. </string>
+    <string name="promilleText5">Betäubungsstadium. Deine Freunde sollten eventuell professionelle Hilfe rufen.</string>
     <string name="promilleText6">Lähmungsstadium. Krankenhaus lässt grüßen.</string>
 
     <string name="infotext"></string>
@@ -58,4 +58,9 @@
     <string name="textAlkoholInfo">Ein 300 ml Bier mit 5% Alkoholgehalt erhält beispielsweise 12g Alkohol. Aufgrund der unterschiedlichen Alkoholsorten werden für die Berechnung Durchschnittwswerte verwendet.</string>
     <string name="person_formel">Gewicht und Körperflüssigkeit:</string>
     <string name="textPersonInfo">Je mehr Körpermasse und Körperflüssigkeit vorhanden ist desto höher ist die Alkoholvertäglichkeit. Frauen haben im Durhschnitt 60% und Männer 70% Wassergehalt.</string>
+    <string name="zeitfaktor">(Der Zeitfaktor wird nicht beachtet.)</string>
+    <string name="strich">________________________________</string>
+    <string name="ergebnis_text">Das Ergebnis wird folgendermaßen interpretiert:</string>
+    <string name="promillewert">Promillewert</string>
+    <string name="diagramm">Diagramm</string>
 </resources>

@@ -18,7 +18,7 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="50dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorLightGray" />
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:text="@string/zurueck"
             android:background="@drawable/button_layout"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
             android:layout_gravity="center"
             />
 
@@ -144,6 +144,7 @@
             android:text=""
             android:background="@drawable/button_layout"
             android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
             />
 </LinearLayout>
 

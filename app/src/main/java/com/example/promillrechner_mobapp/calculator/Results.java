@@ -53,7 +53,9 @@ public class Results extends AppCompatActivity {
         double result = calculatePromille(intent);
         textPromille.setText(result + "‰");
 
-        textEingabeWerte.setText(showEingabeWerte(intent));
+        if(result != 0 ) {
+            textEingabeWerte.setText(showEingabeWerte(intent));
+        }
         textResultInfo.setText(setResultText(result));
         textPromille.setTextColor(setTextColor(result));
 
@@ -129,11 +131,11 @@ public class Results extends AppCompatActivity {
     private int setTextColor (double result){
 
         if(result<0.5)
-            return Color.GREEN;
+            return Color.rgb(134,226,177);
         else if(result>=0.5 && result<1.5)
             return Color.YELLOW;
         else
-            return Color.RED;
+            return Color.rgb(255,0,127);
 
     }
 
@@ -143,10 +145,10 @@ public class Results extends AppCompatActivity {
 
         int countBeer300 = intent.getIntExtra("counterBeer300", 0);
         int countBeer500 = intent.getIntExtra("counterBeer500", 0);
-        int countLiq300 = intent.getIntExtra("counterWine300", 0);
-        int countLiq500 = intent.getIntExtra("counterWine500", 0);
-        int countWine300 = intent.getIntExtra("counterLiq300", 0);
-        int countWine500 = intent.getIntExtra("counterLiq500", 0);
+        int countWine300 = intent.getIntExtra("counterWine300", 0);
+        int countWine500 = intent.getIntExtra("counterWine500", 0);
+        int countLiq300 = intent.getIntExtra("counterLiq300", 0);
+        int countLiq500 = intent.getIntExtra("counterLiq500", 0);
 
         if(countBeer300 != 0)
             eingabeWerte = eingabeWerte + " " + countBeer300 + "x 300ml Bier";
